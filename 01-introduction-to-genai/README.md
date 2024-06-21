@@ -1,146 +1,145 @@
-# Introduction to Generative AI and Large Language Models
+# 생성형 AI와 대형 언어 모델 (LLM) 소개
 
-[![Introduction to Generative AI and Large Language Models](./images/01-lesson-banner.png?WT.mc_id=academic-105485-koreyst)](https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed.html?id=36c6795a-e63c-46dd-8d69-df8bbe6e7bc9?WT.mc_id=academic-105485-koreyst)
+[![Introduction to Generative AI and Large Language Models](../../images/01-lesson-banner.png?WT.mc_id=academic-105485-koreyst)](https://youtu.be/vf_mZrn8ibc?WT.mc_id=academic-105485-koreyst)
 
-*(Click the image above to view video of this lesson)*
+*(이미지를 클릭하면 이 수업의 비디오를 볼 수 있습니다)*
 
-Generative AI is artificial intelligence capable of generating text, images and other types of content. What makes it a fantastic technology is that it democratizes AI, anyone can use it with as little as a text prompt, a sentence written in a natural language. There's no need for you to learn a language like Java or SQL to accomplish something worthwhile, all you need is to use your language, state what you want and out comes a suggestion from an AI model. The applications and impact for this is huge, you write or understand reports, write applications and much more, all in seconds. 
+생성형 AI는 텍스트, 이미지 및 기타 유형의 콘텐츠를 생성할 수 있는 인공지능입니다. 이것이 훌륭한 기술인 이유는 AI를 민주화하기 때문입니다. 누구나 자연어로 작성된 문장인 텍스트 프롬프트만으로 이를 사용할 수 있습니다. Java나 SQL과 같은 언어를 배울 필요가 없으며, 당신이 원하는 것을 말하면 AI 모델에서 제안이 나옵니다. 이것의 응용 프로그램과 영향은 엄청나며, 보고서를 작성하거나 이해하고, 애플리케이션을 작성하고, 그 이상의 것들을 몇 초 만에 할 수 있습니다.
 
-In this curriculum, we’ll explore how our startup leverages generative AI to unlock new scenarios in the education world and how we address the inevitable challenges associated with the social implications of its application and the technology limitations.
+해당 커리큘럼에서는 우리의 스타트업이 교육 세계에서 새로운 시나리오를 개척하기 위해 생성형 AI를 어떻게 활용하는지, 그리고 그 응용과 기술 한계에 따른 불가피한 도전을 어떻게 해결하는지 살펴볼 것입니다.
 
-## Introduction
+## 소개
 
-This lesson will cover:
+수업은 다음 내용을 다룹니다:
 
-* Introduction to the business scenario: our startup idea and mission.
-* Generative AI and how we landed on the current technology landscape.
-* Inner working of a large language model.
-* Main capabilities and practical use cases of Large Language Models.
+* 비즈니스 시나리오 소개: 우리의 스타트업 아이디어와 미션.
+* 생성형 AI와 우리가 현재 기술 환경에 도달한 방법.
+* 대형 언어 모델의 내부 작동 방식.
+* 대형 언어 모델의 주요 기능과 실용적인 사용 사례.
 
-## Learning Goals
+## 학습 목표
 
-After completing this lesson, you will understand:
+이 수업을 완료하면 다음을 이해하게 됩니다:
 
-* What generative AI is and how Large Language Models work.
-* How you can leverage large language models for different use cases, with a focus on education scenarios.
+* 생성형 AI가 무엇인지, 대형 언어 모델이 어떻게 작동하는지.
+* 교육 시나리오를 중심으로 다양한 사용 사례에 대형 언어 모델을 어떻게 활용할 수 있는지.
 
-## Scenario: our educational startup 
+## 시나리오: 우리의 교육 스타트업
 
-Generative Artificial Intelligence (AI) represents the pinnacle of AI technology, pushing the boundaries of what was once thought impossible. Generative AI models have several capabilities and applications, but for this curriculum we'll explore how it's revolutionizing education through a fictional startup. We'll refer to this startup as *our startup*. Our startup works in the education domain with the ambitious mission statement of 
+생성형 인공지능(AI)은 AI 기술의 정점을 나타내며, 한때 불가능하다고 생각되었던 것의 한계를 뛰어넘습니다. 생성형 AI 모델은 여러 가지 기능과 응용 프로그램을 가지고 있지만, 이 커리큘럼에서는 가상의 스타트업을 통해 교육을 혁신하는 방법을 살펴볼 것입니다. 이 스타트업을 *우리 스타트업*이라고 부르겠습니다. 우리 스타트업은 교육 분야에서 다음과 같은 야심찬 미션을 가지고 작업하고 있습니다.
 
-> *improving accessibility in learning, on a global scale, ensuring equitable access to education and providing personalized learning experiences to every learner, according to their needs*.
+>  *전 세계적으로 학습의 접근성을 향상시키고, 교육에 대한 공정한 접근을 보장하며, 각 학습자의 필요에 따라 개인화된 학습 경험을 제공한다.*
 
-Our startup team is aware we’ll not be able to achieve this goal without leveraging one of the most powerful tools of modern times – Large Language Models (LLMs).
+우리 스타트업 팀은 이 목표를 달성하기 위해 현대의 가장 강력한 도구 중 하나인 대형 언어 모델(LLM)을 활용하지 않고는 불가능할 것임을 인식하고 있습니다.
 
-Generative AI is expected to revolutionize the way we learn and teach today, with students having at their disposal virtual teachers 24 hours a day who provide vast amounts of information and examples, and teachers able to leverage innovative tools to assess their students and give feedback.
+생성형 AI는 우리가 오늘날 배우고 가르치는 방식을 혁신할 것으로 예상되며, 학생들은 하루 24시간 가상의 선생님을 이용할 수 있게 되어 방대한 양의 정보와 예제를 제공하고, 선생님들은 학생들을 평가하고 피드백을 주는 데 혁신적인 도구를 활용할 수 있게 될 것입니다.
 
-![Five young students looking at a monitor - image by DALLE2](./images/students-by-DALLE2.png?WT.mc_id=academic-105485-koreyst)
+![Five young students looking at a monitor - image by DALLE2](../../images/students-by-DALLE2.png?WT.mc_id=academic-105485-koreyst)
 
-To start, let’s define some basic concepts and terminology we’ll be using throughout the curriculum.
+시작하기 위해, 이 커리큘럼에서 사용할 기본 개념과 용어를 정의하겠습니다.
 
-## How did we get Generative AI?
+## 우리는 어떻게 생성형 AI를 얻게 되었나요?
 
-Despite the extraordinary *hype* created lately by the announcement of generative AI models, this technology is decades in the making, with the first research efforts dating back to 60s. We're now at a point with AI having human cognitive capabilities, like conversation as shown by for example [OpenAI ChatGPT](https://openai.com/chatgpt) or [Bing Chat](https://www.microsoft.com/edge/features/bing-chat?WT.mc_id=academic-105485-koreyst), which also uses a GPT model for the web search Bing conversations.
+최근 생성형 AI 모델의 발표로 인해 발생한 놀라운 *확장*에도 불구하고, 이 기술은 수십 년 동안 만들어져 왔으며, 최초의 연구 노력은 60년대에 거슬러 올라갑니다. 우리는 이제 인간의 인지 능력을 가진 AI에 도달했습니다. 예를 들어 [OpenAI ChatGPT](https://openai.com/chatgpt)나 [Bing Chat](https://www.microsoft.com/edge/features/bing-chat?WT.mc_id=academic-105485-koreyst)과 같은 대화가 가능한 AI입니다. Bing Chat은 웹 검색 Bing 대화를 위해 GPT 모델을 사용합니다.
 
-Backing up a bit, the  very first prototypes of AI consisted of typewritten chatbots, relying on a knowledge base extracted from a group of experts and represented into a computer. The answers in the knowledge base were triggered by keywords appearing in the input text.
-However, it soon became clear that such approach, using typewritten chatbots, did not scale well.
+조금 뒤로 돌아가 보면, 최초의 AI 프로토타입은 전문가 그룹에서 추출한 지식 베이스를 컴퓨터에 표현하고, 입력 텍스트에 나타나는 키워드에 의해 지식 베이스의 답변이 트리거되는 typewritten 챗봇으로 구성되었습니다. 그러나 typewritten 챗봇을 사용하는 이러한 접근 방식은 잘 확장되지 않는다는 것이 곧 분명해졌습니다.
 
-### A statistical approach to AI: Machine Learning
+### AI에 대한 통계적 접근: 머신러닝
 
-A turning point arrived during the 90s, with the application of a statistical approach to text analysis. This led to the development of new algorithms – known with the name of machine learning - able to learn patterns from data, without being explicitly programmed. This approach allows a machine to simulate human language understanding: a statistical model is trained on text-label pairings, enabling the model to classify unknown input text with a pre-defined label representing the intention of the message.
+90년대에 도래한 전환점은 텍스트 분석에 통계적 접근법을 적용한 것이었습니다. 이로 인해 새로운 알고리즘들이 개발되었는데, 이를 머신러닝이라고 부릅니다. 이 알고리즘들은 명시적으로 프로그래밍되지 않아도 데이터로부터 패턴을 학습할 수 있습니다. 이 접근법은 기계가 인간의 언어 이해를 모방하게 해줍니다: 통계 모델은 텍스트-레이블 쌍에 대해 학습하며, 이를 통해 모델은 알려지지 않은 입력 텍스트를 메시지의 의도를 나타내는 사전 정의된 레이블로 분류할 수 있게 됩니다.
 
-### Neural networks and modern virtual assistants
+### 신경망과 현대의 가상 어시스턴트
 
-In more recent times, the technological evolution of the hardware, capable of handling larger amounts of data and more complex computations, encouraged research in the AI fields, leading to the development of advanced machine learning algorithms – called neural networks or deep learning algorithms.
+최근에는 더 많은 양의 데이터를 처리하고 더 복잡한 계산을 수행할 수 있는 하드웨어의 기술적 진화가 AI 분야의 연구를 촉진시켰고, 이로 인해 고급 머신러닝 알고리즘인 신경망 또는 딥러닝 알고리즘이 개발되었습니다.
 
-Neural networks (and in particular Recurrent Neural Networks – RNNs) significantly enhanced natural language processing, enabling the representation of the meaning of text in a more meaningful way, valuing the context of a word in a sentence.
+신경망(특히 순환 신경망 - RNN)은 자연어 처리를 크게 향상시켜, 단어의 문맥을 고려하여 텍스트의 의미를 더 의미있게 표현할 수 있게 하였습니다.
 
-This is the technology that powered the virtual assistants born in the first decade of the new century, very proficient in interpreting the human language, identifying a need, and performing an action to satisfy it – like answering with a pre-defined script or consuming a 3rd party service.
+이 기술은 새로운 세기의 첫 10년 동안 탄생한 가상 어시스턴트를 구동하였으며, 이들은 인간의 언어를 해석하고, 필요성을 파악하고, 그것을 만족시키기 위한 행동을 수행하는 데 매우 능숙했습니다. 예를 들어, 사전에 정의된 스크립트로 답변하거나 3rd party 서비스를 사용하는 등의 작업을 수행하였습니다.
 
-### Present day, Generative AI
+### 현재의 생성형 AI
 
-So that’s how we came to Generative AI today, which can be seen as a subset of deep learning.
+이것이 현재의 생성형 AI에 이르게 된 과정입니다. 생성형 AI는 딥러닝의 하위 분야로 볼 수 있습니다.
 
-![AI, ML, DL and Generative AI](./images/AI-diagram.png?WT.mc_id=academic-105485-koreyst)
+![AI, ML, DL and Generative AI](../../images/AI-diagram.png?WT.mc_id=academic-105485-koreyst)
 
-After decades of research in the AI field, a new model architecture – called *Transformer* – overcame the limits of RNNs, being able to get much longer sequences of text as input. Transformers are based on the attention mechanism, enabling the model to give different weights to the inputs it receives, ‘paying more attention’ where the most relevant information is concentrated, regardless of their order in the text sequence.
+AI 분야에서 수십 년간의 연구 끝에 새로운 모델 구조인 *Transformer*가 RNN의 한계를 극복했습니다. Transformer는 입력받은 텍스트의 순서에 관계없이 가장 중요한 정보가 집중된 곳에 ’더 많은 주의’를 기울일 수 있도록 모델에 다른 가중치를 부여하는 attention 메커니즘에 기반합니다.
 
-Most of the recent generative AI models – also known as Large Language Models (LLMs), since they work with textual inputs and outputs – are indeed based on this architecture. What’s interesting about these models – trained on a huge amount of unlabeled data from diverse sources like books, articles and websites – is that they can be adapted to a wide variety of tasks and generate grammatically correct text with a semblance of creativity. So, not only did they incredibly enhance the capacity of a machine to ‘understand’ an input text, but they enabled their capacity to generate an original response in human language.
+텍스트 입력과 출력으로 작동하는 대형 언어 모델(Large Language Models, LLMs)이라고도 불리는 최근의 생성형 AI 모델들은 대부분 이 구조에 기반합니다. 이 모델들은 책, 기사, 웹사이트 등 다양한 출처로부터 수많은 양의 라벨이 없는 데이터로 훈련되었습니다. 이 모델들의 흥미로운 점은 다양한 작업에 활용할 수 있고, 문법적으로 올바르고 창의적인 텍스트를 생성할 수 있다는 것입니다. 즉, 기계가 입력 텍스트를 ’이해’하는 능력을 엄청나게 향상시키뿐만 아니라, 인간의 언어로 원본 응답을 생성하는 능력을 가능하게 했습니다.
 
-## How do large language models work?
+## 대형 언어 모델이 작동하는 방식
 
-In the next chapter we are going to explore different types of Generative AI models, but for now let’s have a look at how large language models work, with a focus on OpenAI GPT (Generative Pre-trained Transformer) models.
+다음 장에서는 다양한 유형의 생성형 AI 모델을 살펴볼 것입니다. 하지만 지금은 OpenAI GPT (Generative Pre-trained Transformer) 모델을 중심으로 대형 언어 모델이 작동하는 방식에 대해 알아보겠습니다.
 
-* **Tokenizer, text to numbers**: Large Language Models receive a text as input and generate a text as output. However, being statistical models, they work much better with numbers than text sequences. That’s why every input to the model is processed by a tokenizer, before being used by the core model. A token is a chunk of text – consisting of a variable number of characters, so the tokenizer's main task is splitting the input into an array of tokens. Then, each token is mapped with a token index, which is the integer encoding of the original text chunk.
+* **토크나이저, 텍스트를 숫자로 변환**: 대형 언어 모델은 텍스트를 입력으로 받아 텍스트를 출력합니다. 하지만 통계적 모델이기 때문에 텍스트 시퀀스보다는 숫자로 작업하는 것이 훨씬 더 잘 됩니다. 그래서 모델의 핵심 부분이 사용하기 전에 모든 입력은 토크나이저에 의해 처리됩니다. 토큰은 텍스트의 조각으로, 일정한 수의 문자로 구성됩니다. 그래서 토크나이저의 주요 작업은 입력을 토큰 배열로 분할하는 것입니다. 그런 다음 각 토큰은 토큰 인덱스와 매핑됩니다. 토큰 인덱스는 원래 텍스트 조각의 정수 인코딩입니다.
 
-![Example of tokenization](./images/tokenizer-example.png?WT.mc_id=academic-105485-koreyst)
+![Example of tokenization](../../images/tokenizer-example.png?WT.mc_id=academic-105485-koreyst)
 
-* **Predicting output tokens**: Given n tokens as input (with max n varying from one model to another), the model is able to predict one token as output. This token is then incorporated into the input of the next iteration, in an expanding window pattern, enabling a better user experience of getting one (or multiple) sentence as an answer. This explains why, if you ever played with ChatGPT, you might have noticed that sometimes it looks like it stops in the middle of a sentence.
+* **출력 토큰 예측하기**: n개의 토큰을 입력으로 받으면(최대 n은 모델마다 다름) 모델은 하나의 토큰을 출력으로 예측할 수 있습니다. 이 토큰은 다음 반복의 입력에 확장 윈도우 패턴을 통해 더 나은 사용자 경험을 제공하여 하나(또는 여러) 문장을 답변으로 얻을 수 있습니다. 이를 통해 ChatGPT을 사용한 적이 있다면 때때로 문장 중간에 멈춰 있는 것처럼 보이는 이유를 설명할 수 있습니다.
 
-* **Selection process, probability distribution**: The output token is chosen by the model according to its probability of occurring after the current text sequence. This is because the model predicts a probability distribution over all possible ‘next tokens’, calculated based on its training. However, not always the token with the highest probability is chosen from the resulting distribution. A degree of randomness is added to this choice, in a way that the model acts in a non-deterministic fashion - we do not get the exact same output for the same input. This degree of randomness is added to simulate the process of creative thinking and it can be tuned using a model parameter called temperature.
+* **선택 과정, 확률 분포**: 출력 토큰은 현재 텍스트 시퀀스 다음에 발생할 확률에 따라 모델에 의해 선택됩니다. 이는 모델이 훈련을 기반으로 가능한 ’다음 토큰’에 대한 확률 분포를 예측하기 때문입니다. 그러나 항상 결과 분포에서 가장 높은 확률을 가진 토큰이 선택되는 것은 아닙니다. 이 선택에는 일정한 무작위성이 추가되어, 모델이 비결정적인 방식으로 작동합니다 - 즉, 동일한 입력에 대해 정확히 동일한 출력을 얻지 않습니다. 이 무작위성의 정도는 창의적 사고 과정을 시뮬레이션하기 위해 추가되며, temperature라는 모델 매개변수를 사용하여 조정할 수 있습니다.
 
-## How can our startup leverage Large Language Models?
+## 우리 스타트업이 대형 언어 모델을 어떻게 활용할 수 있을까요?
 
-Now that we have a better understanding of the inner working of a large language model, let’s see some practical examples of the most common tasks they can perform pretty well, with an eye to our business scenario.
-We said that the main capability of a Large Language Model is *generating a text from scratch, starting from a textual input, written in natural language*.
+이제 우리는 대형 언어 모델의 내부 작동 방식에 대해 더 잘 이해하게 되었으니, 그들이 잘 수행할 수 있는 가장 일반적인 작업들의 실제 예시를 살펴보면서 우리 비즈니스 시나리오에 대한 고려사항을 살펴보겠습니다. 앞서 말했듯이, 대형 언어 모델의 주요 능력은 *자연어로 작성된 텍스트 입력을 시작으로, 텍스트를 처음부터 생성하는 것입니다.*
 
-But what kind of textual input and output?
-The input of a large language model is known as prompt, while the output is known as completion, term that refers to the model mechanism of generating the next token to complete the current input. We are going to dive deep into what is a prompt and how to design it in a way to get the most out of our model. But for now, let’s just say that a prompt may include:
+그러나 어떤 종류의 텍스트 입력과 출력이 있을까요? 대형 언어 모델의 입력은 프롬프트(prompt) 라고 알려져 있고, 출력은 completion이라고 알려져 있습니다. 이는 모델이 현재 입력을 완성하기 위해 다음 토큰을 생성하는 메커니즘을 가리킵니다. 우리는 프롬프트가 무엇인지, 그리고 어떻게 설계해야 모델에서 최대의 효과를 얻을 수 있는지에 대해 깊이 파고들 것입니다. 하지만 지금은, 프롬프트가 다음을 포함할 수 있다고만 말하겠습니다:
 
-* An **instruction** specifying the type of output we expect from the model. This instruction sometimes might embed some examples or some additional data.
+* **지시 (instruction)** 를 통해 모델로부터 기대하는 출력 유형을 지정할 수 있습니다. 지시는 때때로 일부 예시나 추가 데이터를 포함할 수 있습니다.
 
-    1. Summarization of an article, book, product reviews and more, along with extraction of insights from unstructured data.
+    1. 기사, 책, 제품 리뷰 등의 요약, 더불어 비구조화된 데이터로부터 인사이트를 추출합니다.
     
-    ![Example of summarization](./images/summarization-example.png?WT.mc_id=academic-105485-koreyst)
+    ![Example of summarization](../../images/summarization-example.png?WT.mc_id=academic-105485-koreyst)
 
     <br>
     
-    2. Creative ideation and design of an article, an essay, an assignment or more.
+    2. 기사, 에세이, 과제 등의 창의적인 아이디어 제안과 디자인.
     
-    ![Example of creative writing](./images/creative-writing-example.png?WT.mc_id=academic-105485-koreyst)
+    ![Example of creative writing](../../images/creative-writing-example.png?WT.mc_id=academic-105485-koreyst)
 
     <br>
     
-* A **question**, asked in the form of a conversation with an agent.
+* **질문 (question)** 을 통해 대화 형식으로 에이전트에게 질문을 물어볼 수 있습니다. 
   
-![Example of conversation](./images/conversation-example.png?WT.mc_id=academic-105485-koreyst)
+![Example of conversation](../../images/conversation-example.png?WT.mc_id=academic-105485-koreyst)
 
 <br>
 
-* A chunk of **text to complete**, which implicitly is an ask for writing assistance.
+* **완성해야 할 텍스트**를 제공함으로써 암시적으로 글쓰기 도움을 요청할 수 있습니다.
    
-![Example of text completion](./images/text-completion-example.png?WT.mc_id=academic-105485-koreyst)
+![Example of text completion](../../images/text-completion-example.png?WT.mc_id=academic-105485-koreyst)
 
 <br>
 
-* A chunk of **code** together with the ask of explaining and documenting it, or a comment asking to generate a piece of code performing a specific task.
+* **코드**에서 그것을 설명하고 문서화하라는 요청을 하거나 특정 작업을 수행하는 코드 조각을 생성할 수 있습니다.  
 
-![Coding example](./images/coding-example.png?WT.mc_id=academic-105485-koreyst)
+
+
+![Coding example](../../images/coding-example.png?WT.mc_id=academic-105485-koreyst)
 
 <br>
 
-The examples above are quite simple and don’t want to be an exhaustive demonstration of Large Language Models capabilities. They just want to show the potential of using generative AI, in particular but not limited to educational context.
+위의 예시들은 매우 간단한 것들이며, 대형 언어 모델의 능력을 철저하게 보여주려는 것이 아닙니다. 단지 생성형 AI를 사용하는 잠재력이 교육적인 맥락에 한정되지 않는 것을 보여주기 위함입니다.
 
-Also, the output of a generative AI model is not perfect and sometimes the creativity of the model can work against it, resulting in an output which is a combination of words that the human user can interpret as a mystification of reality, or it can be offensive. Generative AI is not intelligent - at least in the more comprehensive definition of intelligence, including critical and creative reasoning or emotional intelligence; it is not deterministic, and it is not trustworthy, since fabrications, such as erroneous references, content, and statements, may be combined with correct information, and presented in a persuasive and confident manner. In the following lessons, we’ll be dealing with all these limitations and we’ll see what we can do to mitigate them.
+또한, 생성형 AI 모델의 출력은 완벽하지 않으며 때때로 모델의 창의성이 오히려 인간 사용자가 현실의 왜곡으로 해석할 수 있는 단어들의 조합이나, 불쾌할 수 있는 출력을 만들어낼 수 있습니다. 생성형 AI는 지능적이지 않습니다 - 적어도 비판적이고 창의적인 추론 또는 감정 지능을 포함하는 지능의 보다 포괄적인 정의에서는요; 생성형 AI는 결정론적이지 않으며, 신뢰할 수 없습니다, 왜냐하면 허구, 예를 들어 잘못된 참조, 내용, 그리고 명제들이 올바른 정보와 결합될 수 있고, 설득력 있고 자신감 있어보이게 제시될 수 있기 때문입니다. 다음 수업에서, 우리는 이러한 모든 제한 사항들을 다루게 될 것이며, 그것들을 완화하기 위해 우리가 무엇을 할 수 있는지 살펴볼 것입니다.
 
-## Assignment
+## 과제
 
-Your assignment is to read up more on [generative AI](https://en.wikipedia.org/wiki/Generative_artificial_intelligence?WT.mc_id=academic-105485-koreyst) and try to identify an area where you would add generative AI today that doesn't have it. How would the impact be different from doing it the "old way", can you do something you couldn't before, or are you faster? Write a 300 word summary on what your dream AI startup would look like and include headers like "Problem", "How I would use AI", "Impact" and optionally a business plan. 
+당신의 과제는 [생성형 AI]((https://en.wikipedia.org/wiki/Generative_artificial_intelligence?WT.mc_id=academic-105485-koreyst))에 대해 더 많이 읽어보고, 현재 생성형 AI가 없는 영역에서 어디에 생성형 AI를 활용할 것인지를 파악하는 것입니다. "옛날 방식"과 비교했을 때 영향력은 어떻게 달라질까요, 이전에 할 수 없었던 것을 할 수 있게 되었나요, 아니면 더 빨라졌나요? “문제”, “AI를 어떻게 사용할 것인가”, “영향력” 그리고 선택적으로 비즈니스 계획을 포함한 헤더를 사용하여 꿈의 AI 스타트업이 어떤 모습일지에 대한 300단어 요약을 작성해보세요.
 
-If you did this task, you might even be ready to apply to Microsoft's incubator, [Microsoft for Startups Founders Hub](https://www.microsoft.com/startups?WT.mc_id=academic-105485-koreyst) we offer credits for both Azure, OpenAI, mentoring and much more, check it out!
+이 과제를 수행하면, 여러분은 Microsoft의 인큐베이터인 [Microsoft for Startups Founders Hub](https://www.microsoft.com/startups?WT.mc_id=academic-105485-koreyst)에 지원할 준비가 되어있을지도 모릅니다. 우리는 Azure, OpenAI, 멘토링 등에 대한 크레딧을 제공하며, 더 많은 것들을 확인해보세요!
 
-## Knowledge check
+## 지식 확인
 
-What's true about large language models?
+대형 언어 모델에 대해 어떤 것이 사실인가요?
 
-1. You get the exact same response every time.
-1. It does things perfectly, great at adding numbers, produce working code etc.
-1. The response may vary despite using the same prompt. It's also great at giving you a first draft of something, be it text or code. But you need to improve on the results.
+1. 매번 정확히 같은 응답을 받습니다.
+2. 완벽하게 작동하며, 숫자를 더하는 것, 작동하는 코드를 생성하는 것 등에 탁월합니다.
+3. 동일한 프롬프트를 사용하더라도 응답은 다양할 수 있습니다. 또한 텍스트나 코드 등, 무언가의 첫 번째 초안을 잘 제공합니다. 하지만 결과를 개선해야 합니다.
 
-A: 3, an LLM is non-deterministic, the response vary, however, you can control its variance via a temperature setting. You also shouldn't expect it to do things perfectly, it's here to do the heavy-lifting for you which often means you get a good first attempt at something that you need to gradually improve.
+정답: 3, 대형 언어 모델(LLM)은 비결정론적이므로 응답이 다양하며, 그 변동성은 temperature 설정을 통해 조절할 수 있습니다. 또한 완벽하게 작동한다고 기대해서는 안됩니다. LLM은 여러분을 위해 대부분의 작업을 수행해주지만, 이는 종종 여러분이 점차 개선해야 할 좋은 첫 시도를 얻게 된다는 것을 의미합니다.
 
-## Great Work! Continue the Journey 
+## 잘하셨습니다! 여정을 계속하세요
 
-After completing this lesson, check out our [Generative AI Learning collection](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst) to continue leveling up your Generative AI knowledge!
+이 강의를 완료한 후에는 [Generative AI 학습 컬렉션](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst)을 확인하여 Generative AI 지식을 계속 향상시켜 보세요!
 
-Head over to Lesson 2 where we will look at how to [explore and compare different LLM types](../02-exploring-and-comparing-different-llms/README.md?WT.mc_id=academic-105485-koreyst)!
+Lesson 2로 이동하여 [다양한 LLM 유형 탐색 및 비교](../../../02-exploring-and-comparing-different-llms/translations/ko/README.md?WT.mc_id=academic-105485-koreyst)하는 방법을 살펴보겠습니다!

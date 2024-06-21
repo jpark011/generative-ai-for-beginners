@@ -1,120 +1,122 @@
-# Designing UX for AI Applications
+# AI 애플리케이션을 위한 사용자 경험(ux) 디자인하기
 
-[![Designing UX for AI Applications](./images/12-lesson-banner.png?WT.mc_id=academic-105485-koreyst)](https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed.html?id=1464ef7a-d974-4a04-9ce3-1bc5b3087b4b?WT.mc_id=academic-105485-koreyst)
+[![Designing UX for AI Applications](../../images/12-lesson-banner.png?WT.mc_id=academic-105485-koreyst)](https://youtu.be/bO7h2_hOhR0?WT.mc_id=academic-105485-koreyst)
 
-> _(Click the image above to view video of this lesson)_
+> *(이미지를 클릭하면 이 수업의 비디오를 볼 수 있습니다)*
 
-User experience is a very important aspect of building apps. Users need to be able to use your app in an efficient way to perform tasks. Being efficient is one thing but you also need to design apps so that they can be used by everyone, to make them _accessible_. This chapter will focus on this area so you hopefully end up designing an app that people can and want to use.
+사용자 경험은 앱을 개발하는 데 있어 매우 중요한 부분입니다. 사용자들은 작업을 효율적으로 수행할 수 있어야 합니다. 그리고 효율적으로 사용하는 것도 중요하지만 누구나 사용할 수 있도록 앱을 디자인하는 것도 중요합니다. 이 장에서는 이러한 영역에 중점을 두어 사람들이 사용할 수 있고, 사용하고 싶어하는 앱을 디자인할 수 있도록 하는 부분들을 다룰 것입니다.
 
-## Introduction
+## 소개
 
-User experience is how a user interacts with and uses a specific product or service be it a system, tool, or design. When developing AI applications, developers not only focus on ensuring the user experience is effective but also ethical. In this lesson, we cover how to build Artificial Intelligence (AI) applications that address user needs.
+사용자 경험은 특정 제품이나 서비스(시스템, 도구, 또는 디자인)와 상호 작용하고 사용하는 방식입니다. AI 애플리케이션을 개발할 때, 개발자들은 사용자 경험이 효과적인 것뿐만 아니라 윤리적인 것도 보장하는 데 중점을 둡니다. 이 수업에서는 사용자의 요구를 충족시키는 AI 애플리케이션을 어떻게 구축하는지에 대해 다룹니다.
 
-The lesson will cover the following areas:
+이 수업에서는 다음의 영역들을 다룹니다:
 
-- Introduction to User Experience and Understanding User Needs
-- Designing AI Applications for Trust and Transparency
-- Designing AI Applications for Collaboration and Feedback
+* 사용자 경험 소개 및 사용자 요구 이해
+* 신뢰와 투명성을 위한 AI 애플리케이션 디자인
+* 협력과 피드백을 위한 AI 애플리케이션 디자인
+  
+## 학습 목표
 
-## Learning goals
+이 수업을 마친 후에는 다음을 할 수 있을 것입니다:
 
-After taking this lesson, you'll be able to:
+* 사용자 요구를 충족시키는 AI 애플리케이션을 구축하는 방법에 대한 이해
+* 신뢰와 협력을 촉진하는 AI 애플리케이션 디자인
 
-- Understand how to build AI applications that meet the user needs.
-- Design AI applications that promote trust and collaboration.
+### 전제 조건
 
-### Prerequisite
+다음에 대해 더 읽어보십시오. [user experience and design thinking.](https://learn.microsoft.com/training/modules/ux-design?WT.mc_id=academic-105485-koreyst)
 
-Take some time and read more about [user experience and design thinking.](https://learn.microsoft.com/training/modules/ux-design?WT.mc_id=academic-105485-koreyst)
+## 사용자 경험 소개 및 사용자 요구 이해
 
-## Introduction to User Experience and Understanding User Needs
+우리 가상의 교육 스타트업에서는 두 주요 사용자, 즉 교사와 학생이 있습니다. 각각의 사용자는 고유한 요구사항을 가지고 있습니다. 사용자 중심 디자인은 제품이 목적 그대로의 사용자에게 관련성 있고 유익하도록 하는 데 중점을 둡니다.
 
-In our fictitious education startup, we have two primary users, teachers and students. Each of the two users has unique needs. A user-centered design prioritizes the user ensuring the products are relevant and beneficial for those it is intended for.
+애플리케이션은 **유용하며, 신뢰성 있고, 접근 가능하며, 즐거워야** 좋은 사용자 경험을 제공할 수 있습니다.
 
-The application should be **useful, reliable, accessible and pleasant** to provide a good user experience.
+### 유용성
 
-### Usability
+"유용하다"는 애플리케이션이 의도한 목적과 일치하는 기능을 갖고 있다는 것을 의미합니다. 예를 들어, 평가 과정을 자동화하거나 복습용 플래시카드를 생성하는 것과 같은 목적을 가지고 있을 수 있습니다. 평가 과정을 자동화하는 애플리케이션은 미리 정의된 기준을 기반으로 학생들의 과제에 정확하고 효율적으로 점수를 부여할 수 있어야 합니다. 마찬가지로, 복습용 플래시카드를 생성하는 애플리케이션은 데이터를 기반으로 관련성 있고 다양한 질문을 생성할 수 있어야 합니다.
 
-Being useful means that the application has functionality that matches its intended purpose, such as automating the grading process or generating flashcards for revision. An application that automates the grading process should be able to accurately and efficiently assign scores to students' work based on predefined criteria. Similarly, an application that generates revision flashcards should be able to create relevant and diverse questions based on its data.
+### 신뢰성
 
-### Reliability
+신뢰성은 애플리케이션이 일관되고 오류 없이 지속적으로 작업을 수행할 수 있다는 것을 의미합니다. 그러나 인간과 마찬가지로 AI도 완벽하지 않으며 오류에 노출될 수 있습니다. 애플리케이션은 오류나 예상치 못한 상황에 직면할 수 있으며 이는 인간의 개입이나 수정이 필요할 수 있습니다. 이러한 상황을 직면 했을 때 오류를 어떻게 처리하는지는 중요한 문제입니다. 이 수업의 마지막 섹션에서는 AI 시스템과 애플리케이션이 협력과 피드백을 위해 어떻게 디자인되는지에 대해 다룰 것입니다.
 
-Being reliable means that the application can perform its task consistently and without errors. However, AI just like humans is not perfect and may be prone to errors. The applications may encounter errors or unexpected situations that require human intervention or correction. How do you handle errors? In the last section of this lesson, we will cover how AI systems and applications are designed for collaboration and feedback.
+### 접근성
 
-### Accessibility
+접근 가능하다는 것은 사용자 경험을 여러 능력을 가진 사용자, 장애가 있는 사용자를 포함하여 모든 이에게 확장할 수 있다는 것을 의미합니다. 접근성 가이드라인과 원칙을 따르면, AI 솔루션은 모든 사용자에게 포괄적이고, 사용하기 쉬우며, 혜택이 있는 것으로 나타납니다.
 
-Being accessible means extending the user experience to users with various abilities, including those with disabilities, ensuring no one is left out. By following accessibility guidelines and principles, AI solutions become more inclusive, usable, and beneficial for all users.
+### 즐거움
 
-### Pleasant
+즐거움을 준다는 것은 애플리케이션의 사용이 즐거움을 주는 것을 의미합니다. 매력적인 사용자 경험은 사용자에게 긍정적인 영향을 미칠 수 있어 애플리케이션에 다시 돌아오게 유도하고 비즈니스 수익을 증가시킬 수 있습니다.
 
-Being pleasant means that the application is enjoyable to use. An appealing user experience can have a positive impact on the user encouraging them to return to the application and increasing business revenue.
+![image illustrating UX considerations in AI](../../images/uxinai.png?WT.mc_id=academic-105485-koreyst)
 
-![image illustrating UX considerations in AI](./images/uxinai.png?WT.mc_id=academic-105485-koreyst)
+모든 문제를 AI로 해결할 수 있는 것은 아닙니다. AI는 사용자 경험을 증진시키기 위해 나타납니다. 이는 수동적인 작업을 자동화하거나 사용자 경험을 개인화하는 것과 같은 방식으로 이루어질 수 있습니다.
 
-Not every challenge can be solved with AI. AI comes in to augment your user experience, be it automating manual tasks, or personalizing user experiences.
+## 신뢰와 투명성을 위한 AI 애플리케이션 디자인
 
-## Designing AI Applications for Trust and Transparency
+신뢰를 구축하는 것은 AI 애플리케이션을 디자인할 때 중요합니다. 신뢰가 있다는 것은 애플리케이션이 작업을 완료하고 결과를 일관되게 제공하며 그 결과가 사용자가 필요로 하는 것임을 확신할 수 있게 도움을 줍니다. 이 영역에서의 위험은 불신이나 과신입니다. 불신은 사용자가 AI 시스템에 신뢰를 갖지 않거나 거의 없을 때 발생하며 이는 사용자가 애플리케이션을 거부하게 만들 수 있습니다. 과신은 사용자가 AI 시스템의 능력을 과대평가할 때 발생하며 이는 사용자가 AI 시스템에 지나치게 신뢰할 수 있게 만듭니다. 예를 들어, 자동 채점 시스템에서 과신이 발생하면 교사가 몇몇 종이를 확인하지 않고도 채점 시스템이 잘 작동하는지 확인하지 않을 수 있습니다. 이로 인해 학생들에 대한 불공정하거나 부정확한 성적 또는 피드백 및 개선의 기회를 놓치는 일이 발생할 수 있습니다.
 
-Building trust is critical when designing AI applications. Trust ensures a user is confident that the application will get the work done, deliver results consistently and the results are what the user needs. A risk in this area is mistrust and over trust. Mistrust occurs when a user has little or no trust in an AI system, this leads to the user rejecting your application. Over trust occurs when a user overestimates the capability of an AI system, leading to users trusting the AI system too much. For example, an automated grading system in the case of over trust might lead the teacher not to proof through some of the papers to ensure the grading system works well. This could result in unfair or inaccurate grades for the students, or missed opportunities for feedback and improvement.
+신뢰를 디자인의 중심에 두기 위해 두 가지 방법은 설명가능성과 제어입니다.
 
-Two ways to ensure that trust is put right at the center of design are explainability and control.
+### 설명가능성
 
-### Explainability
 
-When AI helps inform decisions such as imparting knowledge to future generations, it is critical for teachers and parents to understand how AI decisions are made. This is explainability - understanding how AI applications make decisions. Designing for explainability includes adding details of examples of what an AI application can do. For example, instead of "Get started with AI teacher", the system can use: "Summarize your notes for easier revision using AI."
+AI가 미래 세대에 지식을 전달하는 것과 같이 결정에 도움이 되는 경우, 교사와 부모가 AI 결정이 어떻게 이루어지는지 이해하는 것이 중요합니다. AI 애플리케이션이 결정을 내리는 방식을 이해하는 것이 설명가능성입니다. 설명가능성을 위한 디자인에는 AI 애플리케이션이 수행할 수 있는 예제의 세부 정보를 추가하는 것이 포함됩니다. 예를 들어, "AI 교사로 시작하기" 대신에 "AI를 사용하여 노트를 요약하여 쉬운 복습을 도와보세요"와 같이 시스템이 구체적인 예시를 제공할 수 있습니다.
 
-![an app landing page with clear illustration of explainability in AI applications](./images/explanability-in-ai.png?WT.mc_id=academic-105485-koreyst)
+![an app landing page with clear illustration of explainability in AI applications](../../images/explanability-in-ai.png?WT.mc_id=academic-105485-koreyst)
 
-Another example is how AI uses user and personal data. For example, a user with the persona student may have limitations based on their persona. The AI may not be able to reveal answers to questions but may help guide the user to think through how they can solve a problem.
+또 다른 예로는 AI가 사용자 및 개인 데이터를 사용하는 방법이 있습니다. 예를 들어, 학생이라는 페르소나를 가진 사용자는 해당 페르소나에 기반한 제한이 있을 수 있습니다. AI는 질문에 대한 답을 드러낼 수 없을지라도 사용자가 문제를 어떻게 해결할지에 대한 가이드를 제공할 수 있습니다.
 
-![AI replying to questions based on persona](./images/solving-questions.png?WT.mc_id=academic-105485-koreyst)
+![AI replying to questions based on persona](../../images/solving-questions.png?WT.mc_id=academic-105485-koreyst)
 
-One last key part of explainability is the simplification of explanations. Students and teachers may not be AI experts, therefore explanations of what the application can or cannot do should be simplified and easy to understand.
+설명가능성의 마지막 중요한 부분은 설명을 단순화하는 것입니다. 학생들과 교사들이 AI 전문가가 아닐 수 있기 때문에 애플리케이션이 할 수 있는 일이나 할 수 없는 일에 대한 설명은 단순하고 이해하기 쉽게 제공되어야 합니다.
 
-![simplified explanations on AI capabilities](./images/simplified-explanations.png?WT.mc_id=academic-105485-koreyst)
+![simplified explanations on AI capabilities](../../images/simplified-explanations.png?WT.mc_id=academic-105485-koreyst)
 
-### Control
+### 제어
 
-Generative AI creates a collaboration between AI and the user, where for instance a user can modify prompts for different results. Additionally, once an output is generated, users should be able to modify the results giving them a sense of control. For example, when using Bing, you can tailor your prompt based on format, tone and length. Additionally, you can add changes to your output and modify the output as shown below:
+생성형 AI는 사용자와 AI 간의 협력을 만들어냅니다. 예를 들어 사용자는 서로 다른 결과를 얻기 위해 프롬프트를 수정할 수 있습니다. 또한, 한 번 출력물이 생성되면 사용자는 자신의 통제대로 결과를 수정하여 얻을 수 있어야 합니다. 예를 들어, Bing을 사용할 때는 형식, 어조, 길이에 기반하여 프롬프트를 맞춤 설정할 수 있습니다. 더불어 결과에 변경을 추가하거나 출력물을 수정할 수 있습니다. 아래에 표시된 것처럼요:
 
-![Bing search results with options to modify the prompt and output](./images/bing1.png?WT.mc_id=academic-105485-koreyst "Bing search results with options to modify the prompt and output")
+![Bing search results with options to modify the prompt and output](../../images/bing1.png?WT.mc_id=academic-105485-koreyst "Bing search results with options to modify the prompt and output")
 
-Another feature in Bing that allows a user to have control over the application is the ability to opt in and opt out of the data AI uses. For a school application, a student might want to use their notes as well as the teachers' resources as revision material.
+Bing의 또 다른 기능 중 하나는 사용자가 애플리케이션을 통제할 수 있도록 데이터 사용에 동의하거나 동의를 철회할 수 있는 기능입니다. 예를 들어 학교 애플리케이션의 경우 학생은 자신의 노트와 교사의 자료를 복습 자료로 활용하고 싶을 것입니다.
 
-![Bing search results with options to modify the prompt and output](./images/bing2.png?WT.mc_id=academic-105485-koreyst "Bing search results with options to modify the prompt and output")
+![Bing search results with options to modify the prompt and output](../../images/bing2.png?WT.mc_id=academic-105485-koreyst "Bing search results with options to modify the prompt and output")
 
-> When designing AI applications, intentionality is key in ensuring users do not over trust setting unrealistic expectations of its capabilities. One way to do this is by creating friction between the prompts and the results. Reminding the user, that this is AI and not a fellow human being
+> AI 애플리케이션을 디자인할 때 의도성(intentionality)은 사용자가 능력을 과대평가하거나 현실적이지 않은 기대를 설정하지 않도록 하는 데 핵심적인 역할을 합니다. 이를 위한 한 가지 방법은 프롬프트와 결과 사이에 마찰을 만들어내는 것입니다. 사용자에게 이것이 AI이며 인간이 아니라는 점을 상기시켜 사용자에게 경고하는 것입니다.
 
-## Designing AI Applications for Collaboration and Feedback
+## 협력과 피드백을 위한 AI 애플리케이션 디자인
 
-As earlier mentioned generative AI creates a collaboration between the user and AI. Most engagements are with a user inputting a prompt and the AI generating an output. What if the output is incorrect? How does the application handle errors if they occur? Does the AI blame the user or take time to explain the error?
+앞서 언급한대로 생성형 AI는 사용자와 AI 간의 협력을 만들어냅니다. 대부분의 상호작용은 사용자가 프롬프트를 입력하고 AI가 결과를 생성하는 것입니다. 그렇다면 결과가 부정확한 경우는 어떻게 처리되는 걸까요? 애플리케이션이 오류를 어떻게 처리하나요? AI는 사용자를 나무랄까요 아니면 오류를 설명하는 데 시간을 들일까요?
 
-AI applications should be built in to receive and give feedback. This not only helps the AI system improve but also builds trust with the users. A feedback loop should be included in the design, an example can be a simple thumbs up or down on the output.
+AI 애플리케이션은 피드백을 받고 주는 데에 적합하게 구축되어야 합니다. 이는 AI 시스템이 개선되는 데 도움이 되는 것뿐만 아니라 사용자와의 신뢰를 쌓는 데에도 기여합니다. 디자인에 피드백 루프를 포함하는 것이 중요하며, 이를 위한 예시로는 결과물에 대한 간단한 좋아요 또는 싫어요가 있을 수 있습니다.
 
-Another way to handle this is to clearly communicate the capabilities and limitations of the system. When a user makes an error requesting something beyond the AI capabilities, there should also be a way to handle this, as shown below.
+이를 처리하는 또 다른 방법은 시스템의 능력과 제한을 명확하게 전달하는 것입니다. 사용자가 AI 능력을 넘어서는 것을 요청할 때, 이에 대한 처리 방법도 명시되어야 합니다. 아래에 표시된 것처럼 사용자가 AI 능력을 벗어난 요청을 할 경우에 대한 처리 방법이 있어야 합니다.
 
-![Giving feedback and handling errors](./images/feedback-loops.png?WT.mc_id=academic-105485-koreyst)
+![Giving feedback and handling errors](../../images/feedback-loops.png?WT.mc_id=academic-105485-koreyst)
 
-System errors are common with applications where the user might need assistance with information outside the scope of the AI or the application may have a limit of how many questions/subjects a user can generate summaries. For example, an AI application trained with data on limited subjects for example, History and Math may not be able to handle questions around Geography. To mitigate this, the AI system can give a response like: "Sorry, our product has been trained with data in the following subjects....., I cannot be able to respond to the question you asked."
+시스템 오류는 사용자가 AI의 범위를 벗어난 정보와 관련한 도움이 필요한 경우나 애플리케이션이 사용자가 생성할 수 있는 질문/주제의 수에 제한을 둔 경우에 흔히 발생합니다. 예를 들어, 역사와 수학과 같은 한정된 주제의 데이터로 훈련된 AI 애플리케이션은 지리와 관련된 질문에 대응할 수 없을 것입니다. 이를 완화하기 위해 AI 시스템은 다음과 같은 응답을 할 수 있습니다: "죄송합니다만, 저희 제품은 다음과 같은 주제의 데이터로 훈련되었기 때문에... 당신이 물은 질문에 답할 수 없습니다."
 
-AI applications are not perfect, therefore, they are bound to make mistakes. When designing your applications, you should ensure you create room for feedback from users and error handling in a way that is simple and easily explainable.
+AI 애플리케이션은 완벽하지 않기 때문에 오류가 발생할 수 있습니다. 그렇기에 앱을 디자인할 때 사용자로부터 피드백과 오류 처리를 간단하고 설명하기 쉬운 방식으로 수용할 수 있도록 하는 것이 중요합니다.
 
-## Assignment
+## 과제
 
-Take any AI apps you've built so far, consider implementing the below steps in your app:
 
-- **Pleasant:** Consider how you can make your app more pleasant. Are you adding explanations everywhere, are you encouraging the user to explore? How are you wording your error messages?
+당신이 만든 AI 앱들 중에 어떠한 것이든 골라 밑의 단계들을 당신의 앱에 구현해보는 것을 고려해보세요:
 
-- **Usability:** Building a web app. Make sure your app is navigable by both mouse and keyboard.
+* **즐거움:** 앱을 어떻게 더 즐겁게 만들 수 있는지 고려하세요. 설명을 어디에 추가하고 있는지, 사용자의 탐험을 유도하고 있는지 확인하세요. 에러 메시지를 어떻게 구성하고 있는지도 고려해보세요.
 
-- **Trust and transparency:** Don't trust the AI completely and its output, consider how you would add a human to the process to verify the output. Also, consider and implement other ways to achieve trust and transparency.
+* **사용성:** 웹 앱을 개발 중이라면, 앱이 마우스와 키보드 둘다를 가지고 탐험할 수 있도록 보장하세요.
 
-- **Control:** Give the user control of the data they provide to the application. Implement a way a user can opt-in and opt-out of data collection in the AI application.
+* **신뢰와 투명성:** AI의 출력물을 완전히 신뢰하지 말고, 출력물을 검증하기 위해 인간을 프로세스에 추가하는 방법을 고려하세요. 또한, 신뢰성과 투명성을 달성하기 위한 다른 방법을 고려하고 구현하세요.
+
+* **제어:** 사용자에게 어플리케이션에 제공하는 데이터를 통제할 수 있는 권한을 부여하세요. 사용자가 AI 어플리케이션의 데이터 수집에 동의하거나 동의 철회할 수 있는 방법을 구현하세요.
 
 <!-- ## [Post-lecture quiz](quiz-url) -->
 
-## Continue Your Learning!
+## 축하합니다, 이번 코스를 완료하였습니다.
 
-After completing this lesson, check out our [Generative AI Learning collection](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst) to continue leveling up your Generative AI knowledge!
+이 수업이 끝났으니 우리의 [Generative AI 학습 컬렉션](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst) 수업을 들어, 생성형 AI에 관한 지식을 계속해서 쌓아보세요!
 
-Head over to Lesson 13 where we will look at how to [design UX for AI applications](../13-securing-ai-applications/README.md?WT.mc_id=academic-105485-koreyst)!
+축하합니다, 이번 코스를 완료하였습니다! 그러나 여기서 멈추면 안됩니다. 바라건대, 당신이 당신만의 생성형 AI 스타트업을 만드는 것에 영감을 얻었으면 좋겠습니다. 여기 [Microsoft Founders Hub](https://aka.ms/genai-foundershub?WT.mc_id=academic-105485-koreyst)로 이동하여 당신의 여정에 도움을 주기 위한 프로그램에 신청해보세요. 

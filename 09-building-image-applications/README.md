@@ -1,95 +1,96 @@
-# Building Image Generation Applications
+# 이미지 생성 애플리케이션 구축하기
 
-[![Building Image Generation Applications](./images/09-lesson-banner.png?WT.mc_id=academic-105485-koreyst)](TBD)
+[![Building Image Generation Applications](../../images/09-lesson-banner.png?WT.mc_id=academic-105485-koreyst)](TBD)
 
-> **Video Coming Soon**
+> **비디오 제공 예정**
 
-There's more to LLMs than text generation. It's also possible to generate images from text descriptions. Having images as a modality can be highly useful in a number of areas from MedTech, architecture, tourism, game development and more. In this chapter, we will look into the two most popular image generation models, DALL-E and Midjourney.
+LLM은 텍스트 생성 이상의 기능을 갖고 있습니다. 텍스트 설명으로부터 이미지를 생성하는 것도 가능합니다. 이미지를 모달리티로 사용하는 것은 MedTech, 건축, 관광, 게임 개발 등 여러 분야에서 매우 유용할 수 있습니다. 이 장에서는 가장 인기 있는 이미지 생성 모델인 DALL-E와 Midjourney에 대해 알아보겠습니다.
 
-## Introduction
+## 소개
 
-In this lesson, we will cover:
+이 레슨에서는 다음을 다룰 예정입니다:
 
-- Image generation and why it's useful.
-- DALL-E and Midjourney, what they are, and how they work.
-- How you would build an image generation app.
+- 이미지 생성과 그 유용성
+- DALL-E와 Midjourney, 그들이 무엇이며 어떻게 작동하는지
+- 이미지 생성 애플리케이션을 구축하는 방법
 
-## Learning Goals
+## 학습 목표
 
-After completing this lesson, you will be able to:
+이 레슨을 마치면 다음을 할 수 있게 될 것입니다:
 
-- Build an image generation application.
-- Define boundaries for your application with meta prompts.
-- Work with DALL-E and Midjourney.
+- 이미지 생성 애플리케이션을 구축할 수 있습니다.
+- 메타 프롬프트를 사용하여 애플리케이션의 범위를 정의할 수 있습니다.
+- DALL-E와 Midjourney와 함께 작업할 수 있습니다.
 
-## Why build an image generation application?
+## 이미지 생성 애플리케이션을 구축하는 이유
 
-Image generation applications are a great way to explore the capabilities of Generative AI. They can be used for, for example:  
+이미지 생성 애플리케이션은 생성적 AI의 능력을 탐색하는 좋은 방법입니다. 이미지 편집 및 합성과 같은 다양한 용도로 이미지를 생성할 수 있습니다.
 
-- **Image editing and synthesis**. You can generate images for a variety of use cases, such as image editing and image synthesis.  
+- **이미지 편집 및 합성**. 이미지 편집 및 이미지 합성과 같은 다양한 용도로 이미지를 생성할 수 있습니다.
 
-- **Applied to a variety of industries**. They can also be used to generate images for a variety of industries like Medtech, Tourism, Game development and more.
+- **다양한 산업에 적용**. MedTech, 관광, 게임 개발 등 다양한 산업에 이미지를 생성하는 데 사용할 수 있습니다.
 
-## Scenario: Edu4All
+## 시나리오: Edu4All
 
-As part of this lesson, we will continue to work with our startup, Edu4All, in this lesson. The students will create images for their assessments, exactly what images is up to the students, but they could be illustrations for their own fairytale or create a new character for their story or help them visualize their ideas and concepts.
+이 레슨의 일환으로 Edu4All이라는 스타트업과 계속해서 작업할 예정입니다. 학생들은 자신들의 평가를 위해 이미지를 생성할 것입니다. 어떤 이미지를 생성할지는 학생들에게 달려 있지만, 그들은 자신들의 동화를 위한 일러스트를 만들거나 이야기를 위한 새로운 캐릭터를 만들거나 아이디어와 개념을 시각화하는 데 도움이 되는 이미지를 생성할 수 있습니다.
 
-Here's what Edu4All's students could generate for example if they're working in class on monuments:
+예를 들어, Edu4All의 학생들이 수업에서 명소에 대해 작업한다면:
 
-![Edu4All startup, class on monuments, Eiffel Tower](./images/startup.png?WT.mc_id=academic-105485-koreyst)
+![Edu4All 스타트업, 명소 수업, 에펠탑](../../images/startup.png?WT.mc_id=academic-105485-koreyst)
 
-using a prompt like
+다음과 같은 프롬프트를 사용하여 이미지를 생성할 수 있습니다.
 
-> "Dog next to Eiffel Tower in early morning sunlight"
+> "아침 햇살에 에펠탑 옆에 있는 개"
 
-## What is DALL-E and Midjourney?
+## DALL-E와 Midjourney란 무엇인가요?
 
-[DALL-E](https://openai.com/dall-e-2?WT.mc_id=academic-105485-koreyst) and [Midjourney](https://www.midjourney.com/?WT.mc_id=academic-105485-koreyst) are two of the most popular image generation models, they allow you to use prompts to generate images.
+[DALL-E](https://openai.com/dall-e-2?WT.mc_id=academic-105485-koreyst)와 [Midjourney](https://www.midjourney.com/?WT.mc_id=academic-105485-koreyst)는 가장 인기 있는 이미지 생성 모델 중 두 가지로, 텍스트를 사용하여 이미지를 생성할 수 있게 해줍니다.
 
 ### DALL-E
 
-Let's start with DALL-E, which is a Generative AI model that generates images from text descriptions.
+먼저 DALL-E부터 시작해보겠습니다. DALL-E는 텍스트 설명으로부터 이미지를 생성하는 생성형 AI 모델입니다.
 
-> [DALL-E is a combination of two models, CLIP and diffused attention](https://towardsdatascience.com/openais-dall-e-and-clip-101-a-brief-introduction-3a4367280d4e?WT.mc_id=academic-105485-koreyst).  
+> [DALL-E는 CLIP과 diffused attention 두 모델의 조합입니다](https://towardsdatascience.com/openais-dall-e-and-clip-101-a-brief-introduction-3a4367280d4e?WT.mc_id=academic-105485-koreyst).
 
-- **CLIP**, is a model that generates embeddings, which are numerical representations of data, from images and text.  
+- **CLIP**은 이미지와 텍스트로부터 데이터의 수치적 표현인 임베딩을 생성하는 모델입니다.
 
-- **Diffused attention**, is a model that generates images from embeddings. DALL-E is trained on a dataset of images and text and can be used to generate images from text descriptions. For example, DALL-E can be used to generate images of a cat in a hat, or a dog with a mohawk.
+- **Diffused attention**은 임베딩으로부터 이미지를 생성하는 모델입니다. DALL-E는 이미지와 텍스트 데이터셋으로 학습되며, 텍스트 설명으로부터 이미지를 생성할 수 있습니다. 예를 들어, DALL-E는 모자를 쓴 고양이 이미지나 모히칸을 한 개의 개 이미지를 생성할 수 있습니다.
 
 ### Midjourney
 
-Midjourney works in a similar way to DALL-E, it generates images from text prompts. Midjourney, can also be used to generate images using prompts like “a cat in a hat”, or a “dog with a mohawk”.
+Midjourney는 DALL-E와 비슷한 방식으로 작동하며, 텍스트 프롬프트를 사용하여 이미지를 생성합니다. Midjourney는 "모자를 쓴 고양이"나 "모히칸을 한 개"와 같은 프롬프트를 사용하여 이미지를 생성할 수도 있습니다.
 
-![Image generated by Midjourney, mechanical pigeon](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rupert_Breheny_mechanical_dove_eca144e7-476d-4976-821d-a49c408e4f36.png/440px-Rupert_Breheny_mechanical_dove_eca144e7-476d-4976-821d-a49c408e4f36.png?WT.mc_id=academic-105485-koreyst)
-*Image cred Wikipedia, image generated by Midjourney*
+![Image generated by Midjourney, mechanical pigeon](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Rupert_Breheny_mechanical_dove_eca144e7-476d-4976-821d-a49c408e4f36.png/440px-Rupert_Breheny_mechanical_dove_eca144e7-476d-4976-821d-a49c408e4f36.png?WT.mc_id=academic-105485-koreyst)  
 
-## How does DALL-E and Midjourney Work
+*이미지 출처: 위키백과, Midjourney가 생성한 이미지*
 
-First, [DALL-E](https://arxiv.org/pdf/2102.12092.pdf?WT.mc_id=academic-105485-koreyst). DALL-E is a Generative AI model based on the transformer architecture with an *autoregressive transformer*.  
+## DALL-E와 Midjourney는 어떻게 작동하나요?
 
-An *autoregressive transformer* defines how a model generates images from text descriptions, it generates one pixel at a time, and then uses the generated pixels to generate the next pixel. Passing through multiple layers in a neural network, until the image is complete.  
+먼저, [DALL-E](https://arxiv.org/pdf/2102.12092.pdf?WT.mc_id=academic-105485-koreyst)입니다. DALL-E는 *자기회귀 트랜스포머 (autoregressive transformer)* 를 기반으로 한 생성형 AI 모델입니다.
 
-With this process, DALL-E, controls attributes, objects, characteristics, and more in the image it generates. However, DALL-E 2 and 3 have more control over the generated image.
+*자기회귀 트랜스포머 (autoregressive transformer)* 는 모델이 텍스트 설명으로부터 이미지를 생성하는 방식을 정의합니다. 모델은 한 번에 한 픽셀을 생성하고, 생성된 픽셀을 사용하여 다음 픽셀을 생성합니다. 신경망의 여러 계층을 통과하여 이미지가 완성됩니다.
 
-## Building your first image generation application
+이 과정을 통해 DALL-E는 생성된 이미지에서 속성, 객체, 특징 등을 제어할 수 있습니다. 더불어 DALL-E 2와 3은 생성된 이미지에 대해 더 많은 제어를 할 수 있습니다.
 
-So what does it take to build an image generation application? You need the following libraries:
+## 첫 번째 이미지 생성 애플리케이션 구축하기
 
-- **python-dotenv**, you're highly recommended to use this library to keep your secrets in a *.env* file away from the code.
-- **openai**, this library is what you will use to interact with the OpenAI API.
-- **pillow**, to work with images in Python.
-- **requests**, to help you make HTTP requests.
+이미지 생성 애플리케이션을 구축하려면 어떤 라이브러리가 필요할까요? 다음 라이브러리가 필요합니다:
 
-1. Create a file *.env* with the following content:
+- **python-dotenv**: 이 라이브러리를 사용하여 secrets를 코드에서 분리하여 *.env* 파일에 저장하는 것을 권장합니다.
+- **openai**: OpenAI API와 상호 작용하기 위해 사용하는 라이브러리입니다.
+- **pillow**: Python에서 이미지 작업을 위해 사용하는 라이브러리입니다.
+- **requests**: HTTP 요청을 도와주는 라이브러리입니다.
+
+1. 다음 내용으로 *.env* 파일을 생성하세요:
 
     ```text
     AZURE_OPENAI_ENDPOINT=<your endpoint>
     AZURE_OPENAI_KEY=<your key>
     ```
 
-    Locate this information in Azure Portal for your resource in the "Keys and Endpoint" section.
+    이 정보는 Azure Portal에서 리소스의 "Keys and Endpoint" 섹션에서 찾을 수 있습니다.
 
-1. Collect the above libraries in a file called *requirements.txt* like so:
+1. 다음과 같이 *requirements.txt* 파일에 위의 라이브러리들을 모아두세요:
 
     ```text
     python-dotenv
@@ -98,7 +99,7 @@ So what does it take to build an image generation application? You need the foll
     requests
     ```
 
-1. Next, create virtual environment and install the libraries:
+1. 이제 가상 환경을 생성하고 라이브러리를 설치하세요:
 
     ```bash
     python3 -m venv venv
@@ -106,14 +107,14 @@ So what does it take to build an image generation application? You need the foll
     pip install -r requirements.txt
     ```
 
-    For Windows, use the following commands to create and activate your virtual environment:
+    Windows의 경우 다음 명령을 사용하여 가상 환경을 생성하고 활성화하세요:
 
     ```bash
     python3 -m venv venv
     venv\Scripts\activate.bat
     ````
 
-1. Add the following code in file called *app.py*:
+1. *app.py*라는 파일에 다음 코드를 추가하세요:
 
     ```python
     import openai
@@ -122,55 +123,55 @@ So what does it take to build an image generation application? You need the foll
     from PIL import Image
     import dotenv
     
-    # import dotenv
+    # dotenv 라이브러리를 불러옵니다.
     dotenv.load_dotenv()
     
-    # Get endpoint and key from environment variables
+    # 환경 변수에서 엔드포인트와 키를 가져옵니다.
     openai.api_base = os.environ['AZURE_OPENAI_ENDPOINT']
     openai.api_key = os.environ['AZURE_OPENAI_KEY']     
     
-    # Assign the API version (DALL-E is currently supported for the 2023-06-01-preview API version only)
+    # API 버전을 할당합니다 (DALL-E는 현재 2023-06-01-preview API 버전만 지원됩니다).
     openai.api_version = '2023-06-01-preview'
     openai.api_type = 'azure'
     
     
     try:
-        # Create an image by using the image generation API
+        # 이미지 생성 API를 사용하여 이미지를 생성합니다.
         generation_response = openai.Image.create(
-            prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils',    # Enter your prompt text here
+            prompt='수선화가 자라는 안개가 자욱한 초원에 막대사탕을 들고 있는 말 위의 토끼',    # 여기에 원하는 프롬프트 텍스트를 입력하세요
             size='1024x1024',
             n=2,
             temperature=0,
         )
-        # Set the directory for the stored image
+        # 저장된 이미지를 위한 디렉토리를 설정합니다.
         image_dir = os.path.join(os.curdir, 'images')
     
-        # If the directory doesn't exist, create it
+        # 디렉토리가 존재하지 않으면 생성합니다.
         if not os.path.isdir(image_dir):
             os.mkdir(image_dir)
     
-        # Initialize the image path (note the filetype should be png)
+        # 이미지 경로를 초기화합니다 (파일 유형은 png여야 합니다).
         image_path = os.path.join(image_dir, 'generated-image.png')
     
-        # Retrieve the generated image
-        image_url = generation_response["data"][0]["url"]  # extract image URL from response
-        generated_image = requests.get(image_url).content  # download the image
+        # 생성된 이미지를 가져옵니다.
+        image_url = generation_response["data"][0]["url"]  # 응답에서 이미지 URL을 추출합니다.
+        generated_image = requests.get(image_url).content  # 이미지를 다운로드합니다.
         with open(image_path, "wb") as image_file:
             image_file.write(generated_image)
     
-        # Display the image in the default image viewer
+        # 기본 이미지 뷰어에서 이미지를 표시합니다.
         image = Image.open(image_path)
         image.show()
     
-    # catch exceptions
+    # 예외 처리
     except openai.error.InvalidRequestError as err:
         print(err)
 
     ```
 
-Let's explain this code:
+이 코드를 설명해보겠습니다:
 
-- First, we import the libraries we need, including the OpenAI library, the dotenv library, the requests library, and the Pillow library.
+- 먼저, 필요한 라이브러리를 가져옵니다. 이는 OpenAI 라이브러리, dotenv 라이브러리, requests 라이브러리, 그리고 Pillow 라이브러리를 포함합니다.
 
     ```python
     import openai
@@ -180,215 +181,206 @@ Let's explain this code:
     import dotenv
     ```
 
-- Next, we load the environment variables from the *.env* file.
+- 다음으로, *.env* 파일에서 환경 변수를 로드합니다.
 
     ```python
-    # import dotenv
+    # dotenv 라이브러리를 불러옵니다.
     dotenv.load_dotenv()
     ```
 
-- After that, we set the endpoint, key for the OpenAI API, version and type.
+- 그 다음, OpenAI API의 엔드포인트와 키, 버전 및 타입을 설정합니다.
 
     ```python
-    # Get endpoint and key from environment variables
+    # 환경 변수에서 엔드포인트와 키를 가져옵니다.
     openai.api_base = os.environ['AZURE_OPENAI_ENDPOINT']
     openai.api_key = os.environ['AZURE_OPENAI_KEY'] 
 
-    # add version and type, Azure specific
+    # 버전과 타입을 추가합니다. Azure에 특화된 설정입니다.
     openai.api_version = '2023-06-01-preview'
     openai.api_type = 'azure'
     ```
 
-- Next, we generate the image:
+- 그 다음, 이미지를 생성합니다:
 
     ```python
-    # Create an image by using the image generation API
+    # 이미지 생성 API를 사용하여 이미지를 생성합니다.
     generation_response = openai.Image.create(
-        prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils',    # Enter your prompt text here
+        prompt='수선화가 자라는 안개가 자욱한 초원에 막대사탕을 들고 있는 말 위의 토끼',    # 여기에 원하는 프롬프트 텍스트를 입력하세요
         size='1024x1024',
         n=2,
         temperature=0,
     )
     ```
 
-    The above code responds with a JSON object that contains the URL of the generated image. We can use the URL to download the image and save it to a file.
+    위의 코드는 생성된 이미지의 URL을 포함하는 JSON 객체를 반환합니다. 이 URL을 사용하여 이미지를 다운로드하고 파일로 저장할 수 있습니다.
 
-- Lastly, we open the image and use the standard image viewer to display it:
+- 마지막으로, 이미지를 열고 기본 이미지 뷰어를 사용하여 표시합니다:
 
     ```python
     image = Image.open(image_path)
     image.show()
     ```
 
-### More details on generating the image
+### 이미지 생성에 대한 자세한 내용
 
-Let's look at the code that generates the image in more detail:
+이미지를 생성하는 코드를 자세히 살펴보겠습니다:
 
 ```python
 generation_response = openai.Image.create(
-        prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils',    # Enter your prompt text here
+        prompt='수선화가 자라는 안개가 자욱한 초원에 막대사탕을 들고 있는 말 위의 토끼',    # 여기에 원하는 프롬프트 텍스트를 입력하세요
         size='1024x1024',
         n=2,
         temperature=0,
     )
 ```
 
-- **prompt**, is the text prompt that is used to generate the image. In this case, we're using the prompt "Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils".
-- **size**, is the size of the image that is generated. In this case, we're generating an image that is 1024x1024 pixels.
-- **n**, is the number of images that are generated. In this case, we're generating two images.
-- **temperature**, is a parameter that controls the randomness of the output of a Generative AI model. The temperature is a value between 0 and 1 where 0 means that the output is deterministic and 1 means that the output is random. The default value is 0.7.
+- **prompt**는 이미지를 생성하는 데 사용되는 텍스트 프롬프트입니다. 이 경우 "수선화가 자라는 안개가 자욱한 초원에 막대사탕을 들고 있는 말 위의 토끼"라는 프롬프트를 사용합니다.
+- **size**는 생성되는 이미지의 크기입니다. 이 경우 1024x1024 픽셀의 이미지를 생성합니다.
+- **n**은 생성되는 이미지의 개수입니다. 이 경우 두 개의 이미지를 생성합니다.
+- **temperature**은 생성적 AI 모델의 출력의 무작위성을 제어하는 매개변수입니다. temperature는 0과 1 사이의 값으로, 0은 출력이 결정론적이고 1은 출력이 무작위적임을 의미합니다. 기본값은 0.7입니다.
 
-There are more things you can do with images that we will cover in the next section.
+다음 섹션에서 이미지로 할 수 있는 더 많은 작업을 다룰 예정입니다.
 
-## Additional capabilities of image generation
+## 이미지 생성의 추가 기능
 
-You've seen so far how we were able to generate an image using a few lines in Python. However, there are more things you can do with images.
+지금까지 몇 줄의 Python 코드로 이미지를 생성하는 방법을 살펴보았습니다. 그러나 이미지로 할 수 있는 더 많은 작업이 있습니다.
 
-You can also do the following:
+다음과 같은 작업을 수행할 수도 있습니다:
 
-- **Perform edits**. By providing an existing image a mask and a prompt, you can alter an image. For example, you can add something to a portion of an image. Imagine our bunny image, you can add a hat to the bunny. How you would do that is by providing the image, a mask (identifying the part of the area for the change) and a text prompt to say what should be done.
+- **편집하기**. 기존 이미지, 마스크 및 프롬프트를 제공하여 이미지를 수정할 수 있습니다. 예를 들어, 이미지의 일부에 무언가를 추가할 수 있습니다. 토끼 이미지에 모자를 추가한다고 상상해보세요. 이미지, 마스크(변경할 영역을 식별하는) 및 수행할 작업을 설명하는 텍스트 프롬프트를 제공하는 방식으로 수행할 수 있습니다.
 
-    ```python
-    response = openai.Image.create_edit(
-      image=open("base_image.png", "rb"),
-      mask=open("mask.png", "rb"),
-      prompt="An image of a rabbit with a hat on its head.",
-      n=1,
-      size="1024x1024"
-    )
-    image_url = response['data'][0]['url']
-    ```
+        ```python
+        response = openai.Image.create_edit(
+            image=open("base_image.png", "rb"),
+            mask=open("mask.png", "rb"),
+            prompt="모자를 쓴 토끼의 이미지입니다.",
+            n=1,
+            size="1024x1024"
+        )
+        image_url = response['data'][0]['url']
+        ```
 
-    The base image would only contain the rabbit but the final image would have the hat on the rabbit.
+        기본 이미지에는 토끼만 포함되지만 최종 이미지에는 토끼에 모자가 있게 됩니다.
 
-- **Create variations**. The idea is that you take an existing image and ask that variations are created. To create a variation, you provide an image and a text prompt and code like so:
+- **변형 생성하기**. 기존 이미지를 가져와서 변형을 생성할 수 있습니다. 변형을 생성하려면 이미지와 텍스트 프롬프트를 제공하고 다음과 같은 코드를 사용합니다:
 
-    ```python
-    response = openai.Image.create_variation(
-      image=open("bunny-lollipop.png", "rb"),
-      n=1,
-      size="1024x1024"
-    )
-    image_url = response['data'][0]['url']
-    ```
+        ```python
+        response = openai.Image.create_variation(
+            image=open("bunny-lollipop.png", "rb"),
+            n=1,
+            size="1024x1024"
+        )
+        image_url = response['data'][0]['url']
+        ```
 
-    > Note, this is only supported on OpenAI
+        > 참고: 이 기능은 OpenAI에서만 지원됩니다.
 
 ## Temperature
 
-Temperature is a parameter that controls the randomness of the output of a Generative AI model. The temperature is a value between 0 and 1 where 0 means that the output is deterministic and 1 means that the output is random. The default value is 0.7.
+temperature는 생성적 AI 모델의 출력의 무작위성을 제어하는 매개변수입니다. temperature는는 0과 1 사이의 값으로, 0은 출력이 결정론적이고 1은 출력이 무작위적임을 의미합니다. 기본값은 0.7입니다.
 
-Let's look at an example of how temperature works, by running this prompt twice:
+temperature가 어떻게 작용하는지 예제를 통해 살펴보겠습니다. 다음 프롬프트를 두 번 실행하여 확인해보겠습니다:
 
-> Prompt : "Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils"
+> 프롬프트: "수선화가 자라는 안개가 자욱한 초원에 막대사탕을 들고 있는 말 위의 토끼"
 
-![Bunny on a horse holding a lollipop, version 1](./images/v1-generated-image.png?WT.mc_id=academic-105485-koreyst)
+![토끼가 말 위에 막대사탕을 들고 있는 이미지, 버전 1](../../images/v1-generated-image.png?WT.mc_id=academic-105485-koreyst)
 
-Now let's run that same prompt just to see that we won't get the same image twice:
+이제 동일한 프롬프트를 다시 실행하여 동일한 이미지를 얻지 못하는지 확인해보겠습니다:
 
-![Generated image of bunny on horse](./images/v2-generated-image.png?WT.mc_id=academic-105485-koreyst)
+![토끼가 말 위에 달고 있는 이미지](../../images/v2-generated-image.png?WT.mc_id=academic-105485-koreyst)
 
-As you can see, the images are similar, but not the same. Let's try changing the temperature value to 0.1 and see what happens:
+이미지는 비슷하지만 완전히 동일하지는 않습니다. 이제 temperature 값을 0.1로 변경해보고 어떤 일이 일어나는지 확인해보겠습니다:
 
-```python
- generation_response = openai.Image.create(
-        prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils',    # Enter your prompt text here
-        size='1024x1024',
-        n=2
-    )
-```
+### temperature 조절하기
 
-### Changing the temperature
+그러면 응답을 더 결정론적으로 만들어 보겠습니다. 우리가 생성한 두 이미지를 관찰해보면 첫 번째 이미지에는 토끼가 있고 두 번째 이미지에는 말이 있음을 알 수 있습니다. 따라서 이미지가 크게 다릅니다.
 
-So let's try to make the response more deterministic. We could observe from the two images we generated that in the first image, there's a bunny and in the second image, there's a horse, so the images vary greatly.
-
-Let's therefore change our code and set the temperature to 0, like so:
+따라서 코드를 변경하여 온도를 0으로 설정해 보겠습니다:
 
 ```python
 generation_response = openai.Image.create(
-        prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils',    # Enter your prompt text here
+        prompt='수선화가 자라는 안개가 자욱한 초원에 막대사탕을 들고 있는 말 위의 토끼',    # 여기에 원하는 프롬프트 텍스트를 입력하세요
         size='1024x1024',
         n=2,
         temperature=0
     )
 ```
 
-Now when you run this code, you get these two images:
+코드를 실행하면 다음 두 이미지를 얻게 됩니다:
 
-- ![Temperature 0, v1](./images/v1-temp-generated-image.png?WT.mc_id=academic-105485-koreyst)
-- ![Temperature 0 , v2](./images/v2-temp-generated-image.png?WT.mc_id=academic-105485-koreyst)
+- ![Temperature 0, v1](../../images/v1-temp-generated-image.png?WT.mc_id=academic-105485-koreyst)
+- ![Temperature 0 , v2](../../images/v2-temp-generated-image.png?WT.mc_id=academic-105485-koreyst)
 
-Here you can clearly see how the images resemble each other more.
+여기에서 이미지들이 서로 더 닮아있는 것을 명확히 볼 수 있습니다.
 
-## How to define boundaries for your application with metaprompts
+## 메타프롬프트를 사용하여 애플리케이션의 경계 정의하기
 
-With our demo, we can already generate images for our clients. However, we need to create some boundaries for our application.  
+우리의 데모를 통해 이미지를 생성할 수 있습니다. 그러나 애플리케이션에 일부 경계를 설정해야 합니다.
 
-For example, we don't want to generate images that are not safe for work, or that are not appropriate for children.  
+예를 들어, 성인용이나 어린이에게 적합하지 않은 이미지를 생성하고 싶지 않습니다.
 
-We can do this with *metaprompts*. Metaprompts are text prompts that are used to control the output of a Generative AI model. For example, we can use metaprompts to control the output, and ensure that the generated images are safe for work, or appropriate for children.
+이를 위해 *메타프롬프트* 를 사용할 수 있습니다. 메타프롬프트는 생성형 AI 모델의 출력을 제어하는 데 사용되는 텍스트 프롬프트입니다. 예를 들어, 메타프롬프트를 사용하여 출력을 제어하고, 생성된 이미지가 안전하고 어린이에게 적합하도록 할 수 있습니다.
 
-### How does it work?
+### 어떻게 작동하나요?
 
-Now, how do meta prompts work?
+그렇다면 메타프롬프트는 어떻게 작동할까요?
 
-Meta prompts are text prompts that are used to control the output of a Generative AI model, they are positioned before the text prompt, and are used to control the output of the model and embedded in applications to control the output of the model. Encapsulating the prompt input and the meta prompt input in a single text prompt.
+메타프롬프트는 생성형 AI 모델의 출력을 제어하는 데 사용되는 텍스트 프롬프트입니다. 이는 텍스트 프롬프트 앞에 위치하며, 모델의 출력을 제어하고 애플리케이션에서 모델의 출력을 제어하는 데 사용됩니다. 프롬프트 입력과 메타프롬프트 입력을 하나의 텍스트 프롬프트에 포함시킵니다.
 
-One example of a meta prompt would be the following:
-
-```text
-You are an assistant designer that creates images for children. 
-
-The image needs to be safe for work and appropriate for children. 
-
-The image needs to be in color.  
-
-The image needs to be in landscape orientation.  
-
-The image needs to be in a 16:9 aspect ratio. 
-
-Do not consider any input from the following that is not safe for work or appropriate for children. 
-
-(Input) 
+메타프롬프트의 한 예는 다음과 같습니다:
 
 ```text
+어린이를 위한 이미지를 만드는 어시스턴트 디자이너입니다.
 
-Now, let's see how we can use meta prompts in our demo. 
+이미지는 작업하는데 안전하고 어린이에게 적합해야 합니다.
+
+이미지는 컬러여야 합니다.
+
+이미지는 가로 방향이어야 합니다.
+
+이미지는 16:9의 가로 세로 비율을 가져야 합니다.
+
+다음과 같이 작업하는데 안전하지 않거나 어린이에게 적합하지 않은 입력은 고려하지 마세요.
+
+(입력)
+
+```text
+
+이제 데모에서 메타프롬프트를 사용하는 방법을 살펴보겠습니다.
 
 ```python
-disallow_list = "swords, violence, blood, gore, nudity, sexual content, adult content, adult themes, adult language, adult humor, adult jokes, adult situations, adult"
+disallow_list = "칼, 폭력, 피, 유혈, 과도한 노출, 성적인 콘텐츠, 성인용 콘텐츠, 성인 테마, 성인 언어, 성인 유머, 성인 농담, 성인 상황, 성인"
 
-meta_prompt =f"""You are an assistant designer that creates images for children. 
+meta_prompt =f"""어린이를 위한 이미지를 만드는 어시스턴트 디자이너입니다.
 
-The image needs to be safe for work and appropriate for children. 
+이미지는 작업하는데 안전하고 어린이에게 적합해야 합니다.
 
-The image needs to be in color.  
+이미지는 컬러여야 합니다.
 
-The image needs to be in landscape orientation.  
+이미지는 가로 방향이어야 합니다.
 
-The image needs to be in a 16:9 aspect ratio. 
+이미지는 16:9의 가로 세로 비율을 가져야 합니다.
 
-Do not consider any input from the following that is not safe for work or appropriate for children. 
+다음과 같이 작업하는데 안전하지 않거나 어린이에게 적합하지 않은 입력은 고려하지 마세요.
 {disallow_list}
 """
 
 prompt = f"{meta_prompt} 
-Create an image of a bunny on a horse, holding a lollipop"
+토끼가 말 위에 올라타고 롤리팝을 들고 있는 이미지를 생성해주세요"
 
-# TODO add request to generate image
 ```
 
-From the above prompt, you can see how all images being created consider the metaprompt.
+위의 프롬프트에서 모든 생성된 이미지가 메타프롬프트를 고려한다는 것을 볼 수 있습니다.
 
-## Assignment - let's enable students
+## 과제 - 학생들에게 제공하기
 
-We introduced Edu4All at the beginning of this lesson. Now it's time to enable the students to generate images for their assessments.
+우리는 이 수업의 시작에서 Edu4All을 소개했습니다. 이제 학생들이 자신의 평가를 위해 이미지를 생성할 수 있도록 제공할 차례입니다.
 
-The students will create images for their assessments containing monuments, exactly what monuments is up to the students. The students are asked to use their creativity in this task to place these monuments in different contexts.
+학생들은 자신이 선택한 기념물을 포함한 평가용 이미지를 생성할 것입니다. 어떤 기념물을 사용할지는 학생들에게 달려 있습니다. 이 작업에서 학생들은 이러한 기념물을 다른 맥락에 배치하는 창의력을 발휘해야 합니다.
 
-## Solution
+## 해결책
 
-Here's one possible solution:
+다음은 하나의 가능한 해결책입니다:
 
 ```python
 import openai
@@ -397,72 +389,72 @@ import requests
 from PIL import Image
 import dotenv
 
-# import dotenv
+# dotenv를 가져옵니다.
 dotenv.load_dotenv()
 
-# Get endpoint and key from environment variables
+# 환경 변수에서 엔드포인트와 키를 가져옵니다.
 openai.api_base = "<replace with endpoint>"
-openai.api_key = "<replace with api key>"     
+openai.api_key = "<replace with api key>"
 
-# Assign the API version (DALL-E is currently supported for the 2023-06-01-preview API version only)
+# API 버전을 할당합니다 (DALL-E는 현재 2023-06-01-preview API 버전만 지원됩니다)
 openai.api_version = '2023-06-01-preview'
 openai.api_type = 'azure'
     
-disallow_list = "swords, violence, blood, gore, nudity, sexual content, adult content, adult themes, adult language, adult humor, adult jokes, adult situations, adult"
+disallow_list = "칼, 폭력, 피, 유혈, 과도한 노출, 성적인 콘텐츠, 성인용 콘텐츠, 성인 테마, 성인 언어, 성인 유머, 성인 농담, 성인 상황, 성인"
 
-meta_prompt = f"""You are an assistant designer that creates images for children. 
+meta_prompt = f"""어린이를 위한 이미지를 만드는 어시스턴트 디자이너입니다.
 
-The image needs to be safe for work and appropriate for children. 
+이미지는 작업하는데 안전하고 어린이에게 적합해야 합니다.
 
-The image needs to be in color.  
+이미지는 컬러여야 합니다.
 
-The image needs to be in landscape orientation.  
+이미지는 가로 방향이어야 합니다.
 
-The image needs to be in a 16:9 aspect ratio. 
+이미지는 16:9의 가로 세로 비율을 가져야 합니다.
 
-Do not consider any input from the following that is not safe for work or appropriate for children. 
+다음과 같이 작업하는데 안전하지 않거나 어린이에게 적합하지 않은 입력은 고려하지 마세요.
 {disallow_list}"""
 
-prompt = f"""{metaprompt}
-Generate monument of the Arc of Triumph in Paris, France, in the evening light with a small child holding a Teddy looks on.
-""""    
+prompt = f"""{meta_prompt}
+파리, 프랑스의 아크 드 트리옴프 기념비를 저녁 빛 아래에서 작은 아이가 테디를 들고 바라보는 이미지를 생성해주세요.
+"""
 
 try:
-    # Create an image by using the image generation API
+    # 이미지 생성 API를 사용하여 이미지 생성
     generation_response = openai.Image.create(
-        prompt=prompt,    # Enter your prompt text here
+        prompt=prompt,    # 여기에 프롬프트 텍스트를 입력하세요
         size='1024x1024',
         n=2,
         temperature=0,
     )
-    # Set the directory for the stored image
+    # 저장된 이미지의 디렉토리 설정
     image_dir = os.path.join(os.curdir, 'images')
 
-    # If the directory doesn't exist, create it
+    # 디렉토리가 존재하지 않으면 생성
     if not os.path.isdir(image_dir):
         os.mkdir(image_dir)
 
-    # Initialize the image path (note the filetype should be png)
+    # 이미지 경로 초기화 (파일 유형은 png여야 함)
     image_path = os.path.join(image_dir, 'generated-image.png')
 
-    # Retrieve the generated image
-    image_url = generation_response["data"][0]["url"]  # extract image URL from response
-    generated_image = requests.get(image_url).content  # download the image
+    # 생성된 이미지 가져오기
+    image_url = generation_response["data"][0]["url"]  # 응답에서 이미지 URL 추출
+    generated_image = requests.get(image_url).content  # 이미지 다운로드
     with open(image_path, "wb") as image_file:
         image_file.write(generated_image)
 
-    # Display the image in the default image viewer
+    # 기본 이미지 뷰어에서 이미지 표시
     image = Image.open(image_path)
     image.show()
 
-# catch exceptions
+# 예외 처리
 except openai.error.InvalidRequestError as err:
     print(err)
 ```
 
 
-## Great Work! Continue Your Learning
+## 잘하셨습니다. 학습을 계속하세요!
 
-After completing this lesson, check out our [Generative AI Learning collection](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst) to continue leveling up your Generative AI knowledge!
+이 레슨을 완료한 후에는 [Generative AI 학습 컬렉션](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst)을 확인하여 Generative AI 지식을 더욱 향상시킬 수 있습니다!
 
-Head over to Lesson 10 where we will look at how to [build AI applications with low-code](../10-building-low-code-ai-applications/README.md?WT.mc_id=academic-105485-koreyst)
+Lesson 10으로 이동하여 [low-code로 AI 애플리케이션을 구축하는 방법](../../../10-building-low-code-ai-applications/translations/ko/README.md?WT.mc_id=academic-105485-koreyst)을 살펴보세요.

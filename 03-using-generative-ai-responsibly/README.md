@@ -1,133 +1,132 @@
-# Using Generative AI Responsibly
+# 책임감 있게 생성형 AI 사용하기 
 
-[![Using Generative AI Responsibly](./images/03-lesson-banner.png?WT.mc_id=academic-105485-koreyst)]() 
+[![Using Generative AI Responsibly](../../images/03-lesson-banner.png?WT.mc_id=academic-105485-koreyst)]() 
 
-> **Video Coming Soon**
+> **비디오 제공 예정**
 
-It's easy to be fascinated with AI and generative AI in particular, but you need to consider how you would use it responsibly. You need to consider things like how to ensure the output is fair, non-harmful and more. This chapter aims to provide you with mentioned context, what to consider, and how to take active steps to improve your AI usage.
+AI 및 특히 생성형 AI에 매료되는 것은 쉽지만, 우리는 책임 있는 사용 방법을 고려해야 합니다. 즉, 출력물이 공정하고, 해를 끼치지 않도록 하는 등을 어떻게 보장할지에 대해 고려해야 합니다. 이 장에서는 '책임 있는 AI'가 나오게 된 상황과, 이를 위해 고려해야할 사항 및 AI 사용을 개선하기 위해 적극적인 단계를 취하는 방법을 알려주는 것을 목표로 합니다
 
-## Introduction
+## 소개
 
-This lesson will cover:
+이 장은 다음과 같은 것을 다룹니다:
 
-- Why you should prioritize Responsible AI when building Generative AI applications.
-- Core principles of Responsible AI and how they relate to Generative AI.
-- How to put these Responsible AI principles into practice through strategy and tooling.
+- 생성형 AI 애플리케이션을 개발할 때 '책임 있는 AI(Responsible AI)'를 우선적으로 고려해야 하는 이유.
+- '책임 있는 AI'의 핵심 원칙과 그것들이 어떻게 생성형 AI와 관련되어 있는지.
+- 전략과 도구를 통해 '책임 있는 AI'의 원칙을 실천하는 방법.
 
-## Learning Goals
+## 학습 목표
 
-After completing this lesson you will know: 
+이 장이 끝나면 다음을 이해하게 될 것입니다: 
 
-- The importance of Responsible AI when building Generative AI applications.
-- When to think and apply the core principles of Responsible AI when building Generative AI applications.
-- What tools and strategies are available to you to put the concept of Responsible AI into practice.
+- 생성형 AI 애플리케이션을 개발할 때 '책임 있는 AI'의 중요성.
+- 생성형 AI 애플리케이션을 개발할 때 '책임 있는 AI'의 핵심 원칙을 언제 생각하고 적용해야 하는지.
+- '책임 있는 AI' 개념을 실천하기 위해 사용 가능한 도구와 전략.
 
-## Responsible AI Principles
+## '책임 있는 AI' 원칙
 
-The excitement of Generative AI has never been higher. This excitement has brought a lot of new developers, attention, and funding to this space. While this is very positive for anyone looking to build products and companies using Generative AI, it is also important we proceed responsibly.
+생성형 AI에 대한 흥미는 전례 없이 높습니다. 이 흥미는 이 분야에 새로운 개발자, 주목, 자금을 많이 유치하게 되었습니다. 이러한 상황은 생성형 AI를 사용하여 제품과 기업을 만들려는 모든 이에게는 매우 긍정적인 상황이지만, 동시에 이를 책임 있게 진행하는 것도 중요합니다.
 
-Throughout this course, we are focusing on building our startup and our AI education product. We’ll use the principles of Responsible AI: Fairness, Inclusiveness, Reliability/Safety, Security & Privacy, Transparency and Accountability. With these principles, we will explore how they relate to our use of Generative AI in our products.
+이 코스의 전반에 걸쳐 우리는 스타트업과 AI 교육 제품을 만드는데 중점을 두고 있습니다. 우리는 '공정성, 포용성, 안정성/안전성, 보안 및 개인 정보 보호, 투명성 및 책임성'의 책임 있는 AI 원칙을 사용할 것입니다. 이러한 원칙들을 통해 제품에서 생성형 AI를 사용하는 방법과의 관련성을 탐구할 것입니다.
 
-## Why Should You Prioritize Responsible AI
+## 왜 '책임 있는 AI'를 우선시해야 하는가
 
-When building a product, taking a human-centric approach by keeping your user's best interest in mind leads to the best results.
+제품을 만드는 것에 있어, 사용자의 이익을 최우선으로 하는 인간 중심적인 접근 방식은 가장 좋은 결과를 가져옵니다.  
 
-The uniqueness of Generative AI is its power to create helpful answers, information, guidance, and content for users. This can be done without many manual steps which can lead to very impressive results. Without proper planning and strategies, it can also unfortunately lead to some harmful results for your users, your product, and society as a whole.
+생성형 AI의 특별한 점은 사용자에게 도움이 되는 답변, 정보, 지침 및 콘텐츠를 만들 수 있는 능력입니다. 이러한 것은 매뉴얼 단계를 많이 거치지 않아도 인상적인 결과를 얻을 수 있습니다. 하지만 적절한 계획과 전략이 없으면 사용자, 제품, 그리고 사회 전체에게 해로운 결과를 끼칠 수도 있습니다. 
 
-Let's look at some (but not all) of these potentially harmful results:
+이에 대해 몇가지(전체가 아님) 잠재적으로 해로운 결과를 살펴보겠습니다:
 
-### Hallucinations
+### 환각 (Hallucinations)
 
-Hallucinations are a term used to describe when an LLM produces content that is either completely nonsensical or something we know is factually wrong based on other sources of information.
+환각 (Hallucinations)은 LLM이 완전히 비논리적이거나, 잘못되거나 다른 정보 출처를 기반으로 일반적으로 알고 있는 것과 다른 내용을 생성할 때 사용하는 용어입니다.
 
-Let's take for example we build a feature for our startup that allows students to ask historical questions to a model. A student asks the question `Who was the sole survivor of Titanic?`
 
-The model produces a response like the one below:
+예를 들어 우리 스타트업의 기능 중 하나로 학생들이 모델에게 역사와 관련한 질문을 할 수 있도록 하는 경우를 생각해 보겠습니다. 학생이 '타이타닉의 유일한 생존자는 누구였나요?'라는 질문을 한 경우 모델은 아래와 같이 응답할 수 있습니다:
 
-![Prompt saying "Who was the sole survivor of the Titanic"](../03-using-generative-ai-responsibly/images/ChatGPT-titanic-survivor-prompt.webp?WT.mc_id=academic-105485-koreyst)
+![Prompt saying "Who was the sole survivor of the Titanic"](../../../03-using-generative-ai-responsibly/images/ChatGPT-titanic-survivor-prompt.webp?WT.mc_id=academic-105485-koreyst)
 
 > *(Source: [Flying bisons](https://flyingbisons.com?WT.mc_id=academic-105485-koreyst))*
 
-This is a very confident and thorough answer. Unfortunately, it is incorrect. Even with a minimal amount of research, one would discover there was more than one survivor of the Titanic disaster. For a student who is just starting to research this topic, this answer can be persuasive enough to not be questioned and treated as fact. The consequences of this can lead to the AI system being unreliable and negatively impact the reputation of our startup.
+이 대답은 매우 확신에 차있고 철저합 답변처럼 느껴지지만, 불행하게도 부정확한 답변입니다. 조사를 아주 조금만 해보더라도 우리는 타이타닉에서 생존한 사람은 한명 이상임을 찾을 수 있습니다. 그러나 이 주제를 처음 조사하기 시작하는 학생에게는 이 답변은 충분히 설득력이 있는 것처럼 보이고, 의심하지 않고 사실처럼 생각할 수도 있습니다. 이러한 결과들은 AI 시스템을 불안정하고 신뢰할 수 없게 만들어 우리의 스타트업의 평판에 부정적인 영향을 미칠수도 있습니다. 
 
-With each iteration of any given LLM, we have seen performance improvements around minimizing hallucinations. Even with this improvement,  we as application builders and users still need to remain aware of these limitations.
+각 LLM의 반복마다 Hallucination을 최소화하는 성능 향상이 있었지만, 이러한 개선에도 불구하고 응용 프로그램 빌더 및 사용자로서 이러한 제한에 대해 계속 알아야 합니다.
 
-### Harmful Content
+### 유해한 콘텐츠 
 
-We covered in the earlier section when an LLM produces incorrect or nonsensical responses.  Another risk we need to be aware of is when a model responds with harmful content.
+이전 섹션에서 우리는 LLM이 부정확하거나 비논리적인 응답을 생성할 때를 다뤘습니다. 또 다른 리스크는 모델이 유해한 콘텐츠로 응답할 때 발생합니다.
 
-Harmful content can be defined as:
+유해한 콘텐츠는 다음과 같이 정의될 수 있습니다:
 
-- Providing instructions or encouraging self-harm or harm to certain groups.
-- Hateful or demeaning content.
-- Guiding planning any type of attack or violent acts.
-- Providing instructions on how to find illegal content or commit illegal acts.
-- Displaying sexually explicit content.
+- 자해 또는 특정 그룹에 대한 피해를 유도하거나 권장하는 지침을 제공.
+- 혐오스럽거나 또는 모독적인 내용.
+- 모든 유형의 공격이나 폭력 행위를 계획하도록 안내.
+- 불법 콘텐츠를 찾거나 불법 행위를 저지르도록 하는 지침을 제공.
+- 성적으로 유해한 콘텐츠 표시.
 
-For our startup, we want to make sure we have the right tools and strategies in place to prevent this type of content from being seen by students.
+스타트업에서는 학생들이 이러한 유형의 콘텐츠를 보지 못하도록 방지하기 위한 적절한 도구와 전략이 갖추어져 있어야 합니다.
 
-### Lack of Fairness
+### 공정성 부족
 
-Fairness is defined as “ensuring that an AI system is free from bias and discrimination and that they treat everyone fairly and equally.” In the world of Generative AI, we want to ensure that exclusionary worldviews of marginalized groups are not reinforced by the model’s output.
+공정성은 "AI 시스템이 편견과 차별이 없으며 모든 사람을 공정하고 동등하게 대우한다는 것을 보장하는 것"으로 정의됩니다. 생성형 AI의 세계에서는 모델의 출력이 특정 그룹의 배타적인 세계관을 강화하지 않도록 해야 합니다.
 
-These types of outputs are not only destructive to building positive product experiences for our users, but they also cause further societal harm. As application builders, we should always keep a wide and diverse user base in mind when building solutions with Generative AI.
+이러한 종류의 출력물은 사용자에게 부정적인 제품 경험을 만드는 것에 일조할 뿐 아니라 사회적 피해까지 초래합니다. 응용 프로그램 빌더로서 우리는 생성형 AI를 사용하여 솔루션을 개발할 때 항상 넓고 다양한 사용자 베이스를 고려해야 합니다.
 
-## How to Use Generative AI Responsibly
+## 생성형 AI를 책임 있게 사용하는 방법
 
-Now that we have identified the importance of Responsible Generative AI, let's look at 4 steps we can take to build our AI solutions responsibly:
+책임 있는 생성형 AI의 중요성에 대해 배웠으므로 이제 생성형 AI의 답변들을 책임 있게 만드는 4가지 단계에 대해 배워봅시다.
 
-![Mitigate Cycle](./images/mitigate-cycle.png?WT.mc_id=academic-105485-koreyst)
+![Mitigate Cycle](../../images/mitigate-cycle.png?WT.mc_id=academic-105485-koreyst)
 
-### Measure Potential Harms
+### 잠재적 피해 측정
 
-In software testing, we test the expected actions of a user on an application. Similarly, testing a diverse set of prompts users are most likely going to use is a good way to measure potential harm.
+소프트웨어 테스트에 있어 우리는 애플리케이션에서 사용자의 예상되는 행동을 테스트합니다. 마찬가지로 사용자가 사용할 가능성이 높은 다양한 프롬프트를 테스트하는 것은 잠재적인 피해를 측정하는 좋은 방법입니다
 
-Since our startup is building an education product, it would be good to prepare a list of education-related prompts. This could be to cover a certain subject, historical facts, and prompts about student life.
+우리의 스타트업이 교육용 제품을 만들고 있기 때문에 교육 관련 프롬프트의 리스트를 준비하는 게 좋을 것입니다. 이것은 특정 주제들, 역사적 사실들, 그리고 학생의 삶에 관한 프롬프트 등을 포함할 것입니다.
 
-### Mitigate Potential Harms
+### 잠재적 피해 완화
 
-It is now time to find ways where we can prevent or limit the potential harm caused by the model and its responses. We can look at this in 4 different layers:
+이제 모델 및 해당 응답이 일으킬 수 있는 잠재적 피해를 방지하거나 제한할 수 있는 방법을 찾아보겠습니다. 이를 4가지 다른 레이어로 살펴볼 수 있습니다:
 
-![Mitigation Layers](./images/mitigation-layers.png?WT.mc_id=academic-105485-koreyst)
+![Mitigation Layers](../../images/mitigation-layers.png?WT.mc_id=academic-105485-koreyst)
 
-- **Model**. Choosing the right model for the right use case. Larger and more complex models like GPT-4 can cause more of a risk of harmful content when applied to smaller and more specific use cases. Using your training data to fine-tune also reduces the risk of harmful content.
+- **모델**. 올바른 사용 사례에 적합한 모델 선택. GPT-4와 같이 크고 복잡한 모델은 더 작고 구체적인 사용 사례에 적용할 때 유해한 콘텐츠의 위험을 더 많이 초래할 수 있습니다. 훈련 데이터를 사용하여 세밀하게 조정하면 해로운 콘텐츠의 위험을 줄일 수 있습니다.
 
-- **Safety System**. A safety system is a set of tools and configurations on the platform serving the model that help mitigate harm. An example of this is the content filtering system on the Azure OpenAI service. Systems should also detect jailbreak attacks and unwanted activity like requests from bots.
+- **안전 시스템**. 안전 시스템은 플랫폼에 있는 도구와 구성의 모음으로 모델이 해로운 콘텐츠 생산하는 것을 막습니다. Azure OpenAI 서비스의 콘텐츠 필터링 시스템이 이것에 대한 예시입니다. 안전 시스템은 또한 탈옥 공격 및 봇의 요청과 같은 활동을 감지해야 합니다. 
 
-- **Metaprompt**. Metaprompts and grounding are ways we can direct or limit the model based on certain behaviors and information. This could be using system inputs to define certain limits of the model. In addition, providing outputs that are more relevant to the scope or domain of the system.
+- **메타프롬프트**. 메타프롬프트와 그라운딩은 특정 행동 및 정보를 기반으로 모델을 제한하거나 안내하는 방법입니다. 이것은 시스템 입력을 사용하여 모델의 특정 한계를 정의하거나 시스템의 범위나 도메인과 관련이 더 있는 출력을 제공할 수 있습니다. 
 
- It can also be using techniques like Retrieval Augmented Generation (RAG) to have the model only pull information from a selection of trusted sources. There is a lesson later in this course for [building search applications](../08-building-search-applications/README.md?WT.mc_id=academic-105485-koreyst)
+또한 Retrieval Augmented Generation (RAG)과 같은 방법을 사용하여 모델이 검증된 출처들에서 선택하여 정보를 가져올 수 있도록 할 수 있습니다. 추후에 이에 관한 수업이 있습니다. [검색 애플리케이션 구축](../../../08-building-search-applications/translations/ko/README.md?WT.mc_id=academic-105485-koreyst)
 
-- **User Experience**. The final layer is where the user interacts directly with the model through our application’s interface in some way. In this way we can design the UI/UX to limit the user on the types of inputs they can send to the model as well as text or images displayed to the user. When deploying the AI application, we also must be transparent about what our Generative AI application can and can’t do.  
+- **사용자 경험**. 최종 레이어는 사용자가 모델과 어떤 방식으로든 응용 프로그램 인터페이스를 통해 직접 상호 작용하는 곳입니다. 이를 통해 UI/UX를 디자인하여 사용자가 모델로 보낼 수 있는 입력 유형과 사용자에게 표시되는 텍스트 또는 이미지를 제한할 수 있습니다. AI 애플리케이션을 배포할 때에는 또한 생성형 AI 애플리케이션이 무엇을 할 수 있고 할 수 없는지에 대해 투명하게 밝혀야 합니다.   
 
-We have an entire lesson dedicated to [Designing UX for AI Applications](../12-designing-ux-for-ai-applications/README.md?WT.mc_id=academic-105485-koreyst)
+이에 관한 전체 내용을 담은 수업이 있습니다. [AI 애플리케이션을 위한 UX 디자인](../../../12-designing-ux-for-ai-applications/translations/ko/README.md?WT.mc_id=academic-105485-koreyst)
 
-- **Evaluate model**. Working with LLMs can be challenging because we don’t always have control over the data the model was trained on. Regardless, we should always evaluate the model’s performance and outputs. It’s still important to measure the model’s accuracy, similarity, groundedness, and relevance of the output. This helps provide transparency and trust to stakeholders and users.
+- **모델 평가**. LLM 모델과 작업하는 것은 모델이 학습하는 데이터를 우리가 항상 제어할 수는 없기 때문에 어려울 수 있습니다. 그럼에도 불구하고 우리는 모델의 성능과 출력을 항상 평가해야 합니다. 모델의 정확도, 유사성, 기초 특성 및 출력의 관련성을 측정하는 것은 여전히 중요하고, 이는 이해관계자 및 사용자에게 투명성과 신뢰를 제공합니다.
 
-### Operate a Responsible Generative AI solution
+### 책임 있는 생성형 AI 솔루션 운영
 
-Building an operational practice around your AI applications is the final stage. This includes partnering with other parts of our startup like Legal and Security to ensure we are compliant with all regulatory policies. Before launching, we also want to build plans around delivery, handling incidents, and rollback to prevent any harm to our users from growing.
+당신의 AI 애플리케이션을 중심으로 운영적인 실천 방안을 마련하는 것이 최종 단계입니다. 이에는 법적 및 보안 측면에서 스타트업의 다른 부분과 협력하여 모든 규제 정책을 준수하는 것이 포함됩니다. 그리고 출시전에는 제공, 사건 처리 및 사용자에게 피해가 가지 않도록 롤백할 수 있는 계획을 수립해야 합니다.
 
-## Tools
+## 도구들
 
-While the work of developing Responsible AI solutions may seem like a lot, it is work well worth the effort. As the area of Generative AI grows, more tooling to help developers efficiently integrate responsibility into their workflows will mature. For example, the [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview?WT.mc_id=academic-105485-koreyst ) can help detect harmful content and images via an API request.
+책임 있는 AI 솔루션을 개발하는 작업은 많아 보일 수 있지만 그 노력은 확실히 가치 있는 작업입니다. 생성형 AI의 영역이 넓어질 수록 개발자가 책임을 효율적으로 통합할 수 있는 도구들이 많이 생기게 될 것 입니다. 예를 들어 [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview?WT.mc_id=academic-105485-koreyst )는 유해한 콘텐츠 및 이미지를 API 요청을 통해 감지하는 데 도움이 될 수 있습니다.
 
-## Knowledge check
+## 문제
 
-What are some things you need to care about to ensure responsible AI usage?
+문제: 책임 있는 AI 사용을 보장하기 위해 고려해야 할 사항은 무엇인가요?
 
-1. That the answer is correct.
-1. Harmful usage, that AI isn't used for criminal purposes.
-1. Ensuring the AI is free from bias and discrimination.
+1. 답변이 정확한가?
+2. 유해한 사용, 즉 AI가 범죄 목적으로 사용되지 않도록 하는 것.
+3. AI가 편견과 차별에서 자유로운지 확인하는 것.
 
-A: 2 and 3 are correct. Responsible AI helps you consider how to mitigate harmful effects and biases and more.
+정답: 2번, 3번. 책임 있는 AI는 어떻게 유해한 효과와 편견, 차별들을 완화할지에 대한 도움을 줍니다.
 
-## 🚀 Challenge
+## 🚀 도전
 
-Read up on [Azure AI Content Saftey](https://learn.microsoft.com/azure/ai-services/content-safety/overview?WT.mc_id=academic-105485-koreyst) and see what you can adopt for your usage.
+[Azure AI Content Saftey](https://learn.microsoft.com/azure/ai-services/content-safety/overview?WT.mc_id=academic-105485-koreyst)를 읽어보고 사용할 수 있는 내용이 무엇인지 확인해보세요.
 
-## Great Work, Continue Your Learning
+## 수고하셨습니다. 학습을 계속하세요!
 
-After completing this lesson, check out our [Generative AI Learning collection](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst) to continue leveling up your Generative AI knowledge!
+이 수업을 마치고 나서 [Generative AI 학습 컬렉션](https://aka.ms/genai-collection?WT.mc_id=academic-105485-koreyst)를 확인하여 생성형 AI에 관련한 지식을 더욱 쌓을 수 있습니다!
 
-Head over to Lesson 4 where we will look at [Prompt Engineering Fundamentals](../04-prompt-engineering-fundamentals/README.md?WT.mc_id=academic-105485-koreyst)!
+4번 수업으로 이동하여 [프롬프트 엔지니어링 기초](../../../04-prompt-engineering-fundamentals/translations/ko/README.md?WT.mc_id=academic-105485-koreyst)를 살펴보세요!
